@@ -15,6 +15,10 @@ App({
       })
     }
 
+    wx.cloud.init({
+      traceUser: true,
+    })
+
     this.globalData = {}
   }
 })
