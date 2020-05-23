@@ -1,18 +1,8 @@
 {
   "pages": [
-    "pages/index/index",
-    "pages/userConsole/userConsole",
-    "pages/storageConsole/storageConsole",
-    "pages/databaseGuide/databaseGuide",
-    "pages/addFunction/addFunction",
-    "pages/deployFunctions/deployFunctions",
-    "pages/chooseLib/chooseLib",
-    "pages/openapi/openapi",
-    "pages/openapi/serverapi/serverapi",
-    "pages/openapi/callback/callback",
-    "pages/openapi/cloudid/cloudid",
-    "pages/im/im",
-    "pages/im/room/room"
+    "pages/index/index",    
+    "pages/my/my",
+    "pages/cal/cal"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -21,6 +11,23 @@
     "navigationBarTitleText": "云开发 QuickStart",
     "navigationBarTextStyle": "black"
   },
+  "tabBar": { 
+    "list": [{ 
+      "pagePath": "pages/index/index", 
+      "text": "营养信息"      
+    }, {
+      "pagePath": "pages/cal/cal",
+      "text": "卡路里计算"
+    },{
+      "pagePath":"pages/my/my",
+      "text":"我的"
+    }],
+    "color": "black", 
+    "selectedColor": "#FF0000", 
+    "backgroundColor": "white",
+    "borderStyle": "white", 
+    "position": "bottom" 
+    },
   "sitemapLocation": "sitemap.json",
   "style": "v2"
 }
