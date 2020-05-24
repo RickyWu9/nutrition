@@ -4,6 +4,7 @@
 			<view class="weui-panel__bd">
 				<view class="weui-media-box weui-media-box_text" wx:for="{{articleList}}" bindtap="goToArticle" data-route="{{item.route}}">
           <h4 class="weui-media-box__title">{{item.title}}</h4>
+					<view class="weui-media-box__desc">{{item.brief}}</view>
         </view>
 			</view>
 </view>
