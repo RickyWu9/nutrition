@@ -72,7 +72,7 @@ Page({
     wx.cloud.callFunction({
       name:'getArticleList',
     }).then(res=>{
-      console.log(res.result.data)
+      console.log(res)
       this.setData({articles:res.result.data})
   })
  /*
