@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    articleList:[{route:"../article/article",title:"article"}]
   },
 
   /**
@@ -62,5 +62,13 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  goToArticle: function(event){
+    console.log(event)
+    wx.navigateTo({
+      url: event.target.dataset.route
+    })
   }
+
 })
