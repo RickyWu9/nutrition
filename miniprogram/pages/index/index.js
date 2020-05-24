@@ -67,7 +67,7 @@ Page({
   goToArticle: function(event){
     console.log(event)
     wx.navigateTo({
-      url: event.target.dataset.route
+      url: event.currentTarget.dataset.route
     })
   }
 
