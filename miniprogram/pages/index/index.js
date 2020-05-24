@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    articleList:[{route:"../article/article",title:"article"}]
+    articleList:[{route:"../article1/article1",title:"张文宏建议不要喝粥，是怎么回事"}]
   },
 
   /**
