@@ -6,7 +6,7 @@ Page({
    */
   data: {
     /*
-    articles:[
+    articleList:[
       {route:"../articles/article1/article1",title:"张文宏建议不要喝粥，是怎么回事",brief:"粥的营养价值有限，除了碳水化合物，我们还需要蛋白质、脂肪、维生素、电解质等营养物质，而单纯喝粥是远远不够的。"},
   ]
   */
@@ -73,11 +73,11 @@ Page({
       name:'getArticleList',
     }).then(res=>{
       console.log(res)
-      this.setData({articles:res.result.data})
+      this.setData({articleList:res.result.data})
   })
  /*
  const db=wx.cloud.database()
- db.collection('articles').get().then(res=>{console.log(res.data)})
+ db.collection('articleList').get().then(res=>{console.log(res.data)})
  */
   },
 

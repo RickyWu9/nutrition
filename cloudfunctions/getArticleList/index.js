@@ -7,5 +7,5 @@ cloud.init({
 
 const db = cloud.database()
 exports.main = async (event, context) => {
-  return await db.collection('articles').get()
+  return await db.collection('articleList').get()
 }
