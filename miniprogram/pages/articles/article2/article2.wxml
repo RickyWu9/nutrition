@@ -12,6 +12,9 @@
                         主要包含蛋白质、脂肪、碳水化合物、矿物质、维生素、水。
                         也有说法指出膳食纤维是第七大营养素。其中的三大宏观营养素：碳水化合物，蛋白质，脂肪。---我们平日摄入最多的应该是这三样。一般而言，这三样是不能被直接吸收的，需要消化分解成别的成份再被人体吸收。微量营养素：水和其他。---这类是可以被人体直接吸收的！
                     </view>
+                    <view class="weui-article__p">
+                        <image class="weui-article__img" src="../images/img_a2_1.jpg" mode="aspectFit" style="height: 180px" />
+                    </view>
                 </view>
                 <view class="weui-article__section">
                     <view class="weui-article__h3">NO.2/营养素解析</view>
