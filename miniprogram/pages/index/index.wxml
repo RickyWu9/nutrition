@@ -1,5 +1,9 @@
 <!--miniprogram/pages/index/index.wxml-->
 <view class="weui-panel weui-panel_access">
+			<view class="page__hd">
+        <view class="page__title">营养小助手</view>
+        <view class="page__desc">欢迎使用营养小助手，本小程序旨在给你健康营养的饮食。</view>
+    </view>
 			<view class="weui-panel__hd">营养小贴士</view>
 			<view class="weui-panel__bd">
 				<view class="weui-media-box weui-media-box_text" wx:for="{{articleList}}" bindtap="goToArticle" data-route="{{item.route}}">
