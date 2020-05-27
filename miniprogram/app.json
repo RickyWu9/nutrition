@@ -15,18 +15,25 @@
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
+    "selectedColor": "#0303030",
     "list": [
       {
         "pagePath": "pages/index/index",
-        "text": "营养信息"
+        "text": "营养信息",
+        "iconPath":"images/articles.png",
+        "selectedIconPath":"images/articles.png"
       },
       {
         "pagePath": "pages/cal/cal",
-        "text": "卡路里计算"
+        "text": "卡路里计算",
+        "iconPath":"images/cal.png",
+        "selectedIconPath":"images/cal.png"
       },
       {
         "pagePath": "pages/my/my",
-        "text": "我的"
+        "text": "我的",
+        "iconPath":"images/my.png",
+        "selectedIconPath":"images/my.png"
       }
     ],
     "color": "black",
