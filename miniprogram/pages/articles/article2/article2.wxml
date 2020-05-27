@@ -1,0 +1,134 @@
+<!--miniprogram/pages/articles/article2/article2.wxml-->
+<view class="page" data-weui-theme="{{theme}}">
+    <view class="page__hd">
+        <view class="page__title">基础营养学</view>
+        <view class="page__desc">来源：知乎</view>
+    </view>
+    <view class="page__bd">
+        <view class="weui-article">
+                <view class="weui-article__section">
+                    <view class="weui-article__h3">NO.1/营养素一览</view>
+                    <view class="weui-article__p">
+                        主要包含蛋白质、脂肪、碳水化合物、矿物质、维生素、水。
+                        也有说法指出膳食纤维是第七大营养素。其中的三大宏观营养素：碳水化合物，蛋白质，脂肪。---我们平日摄入最多的应该是这三样。一般而言，这三样是不能被直接吸收的，需要消化分解成别的成份再被人体吸收。微量营养素：水和其他。---这类是可以被人体直接吸收的！
+                    </view>
+                    <view class="weui-article__p">
+                        <image class="weui-article__img" src="../images/img_a2_1.jpg" mode="aspectFit" style="height: 180px" />
+                    </view>
+                </view>
+                <view class="weui-article__section">
+                    <view class="weui-article__h3">NO.2/营养素解析</view>
+                    <view class="weui-article__h4">（一）碳水化合物</view>
+                    <view class="weui-article__p">
+                        碳水化合物是由碳、氢、氧三种元素组成的一类化合物，其中氢和氧的比例与水分子中氢和氧的比例相同，因而被称为碳水化合物，又称“糖类”。
+                    </view>
+                    <view class="weui-article__p">
+                        根据分子结构的繁简，碳水化合物分为单糖、双糖和多糖三大类。
+                    </view>
+                    <view class="weui-article__p">
+                        1、单糖
+                    </view>
+                    <view class="weui-article__p">
+                        这是最简单的碳水化合物，可直接被人体吸收利用。最常见的有葡萄糖、果糖和半乳糖。葡萄糖主要存在于植物型食物中，人血液中的糖是葡萄糖。果糖存在于水果中，蜂蜜中含量最高。这种糖入口后会被人体快速吸收，尤其适合快速补充能量。
+                    </view>
+                    <view class="weui-article__p">
+                        2、双糖
+                    </view>
+                    <view class="weui-article__p">
+                        这是由两分子单糖脱去一分子水缩合而成的糖，易溶于水。它需要分解成单糖才能被身体吸收。最常见的双糖是蔗糖、麦芽糖和乳糖。白糖、红糖、砂糖都是蔗糖。
+                    </view>
+                    <view class="weui-article__p">
+                        3、多糖
+                    </view>
+                    <view class="weui-article__p">
+                        这是由许多单糖分子结合而成的高分子化合物，无甜味，不溶于水。多糖主要包括淀粉、糊精、糖原和膳食纤维。
+                    </view>
+                    <view class="weui-article__p">
+                        ①淀粉：是谷类、薯类、豆类食物的主要成分。淀粉在消化酶的作用下可分解成糊精，再进一步消化成葡萄糖被吸收。
+                    </view>
+                    <view class="weui-article__p">
+                        ②糖原：也叫动物淀粉，是动物体内贮存葡萄糖的一种形式，主要存在于肝脏和肌肉内。当体内血糖水平下降时，糖原即可重新分解成葡萄糖满足人体对能量的需要。
+                    </view>
+                    <view class="weui-article__p">
+                        ③膳食纤维：不能被人体消化用来提供能量。
+                    </view>
+                    <view class="weui-article__p">
+                        碳水化合物的来源： 谷类、薯类、豆类富含淀粉，是碳水化合物的主要来源。食糖（白糖、红糖、砂糖）几乎100%是碳水化合物。蔬菜水果除含少量果糖外还含纤维素和果胶。对于健身人群，推举主食以摄入优质的杂粮为主。训练中和训练后可以摄入快速吸收的单糖！
+                    </view>
+
+                    <view class="weui-article__h4">（二）蛋白质</view>
+                    <view class="weui-article__p">
+                        营养学上根据食物蛋白质所含氨基酸的种类和数量将食物蛋白质分三类：
+                    </view>
+                    <view class="weui-article__p">
+                        1. 完全蛋白质
+                    </view>
+                    <view class="weui-article__p">
+                        蛋、鱼、肉、奶中，含有最高比例的完全蛋白质。 完全蛋白质也可称为优质蛋白质。它们所含的必需氨基酸种类齐全，数量充足，彼此比例适当。这一类蛋白质不但可以维持人体健康，还可以促进生长发育。
+                    </view>
+                    <view class="weui-article__p">
+                        2. 半完全蛋白质
+                    </view>
+                    <view class="weui-article__p">
+                        这类蛋白质所含氨基酸虽然种类齐全，但其中某些氨基酸的数量不能满足人体的需要。它们可以维持生命，但不能促进生长发育。例如，小麦中的麦胶蛋白便是半完全蛋白质，含赖氨酸很少。食物中所含的氨基酸与人体所需相比，有差距的某一种或某几种氨基酸叫做限制氨基酸。谷类蛋白质中赖氨酸含量多半较少，所以，它们的限制氨基酸是赖氨酸。
+                    </view>
+                    <view class="weui-article__p">
+                        3. 不完全蛋白质
+                    </view>
+                    <view class="weui-article__p">
+                        这类蛋白质不能提供人体所需的全部必需氨基酸，单纯靠它们既不能促进生长发育，也不能维持生命。例如，肉皮中的胶原蛋白便是不完全蛋白质。尽管蛋白质的组成是有差异的，我们不能单一的使用某几种蛋白质，只有将不同的蛋白质混合使用，才能完整的补充所有氨基酸！因此，不要排斥植物蛋白！
+                    </view>
+                    
+                    <view class="weui-article__h4">（三）脂肪</view>
+                    <view class="weui-article__p">
+                        这里我们粗浅地将脂肪分为单不饱和脂肪酸，多不饱和脂肪酸和饱和脂肪酸三类。
+                    </view>
+                    <view class="weui-article__p">
+                        1、富含单不饱和脂肪酸和多不饱和脂肪酸组成的脂肪在室温下呈液态，大多为植物油，如花生油、玉米油、豆油、菜子油等。
+                    </view>
+                    <view class="weui-article__p">
+                        我们一般认为这类脂肪有助于降血脂、降低胆固醇和得某些疾病的风险，甚至对减脂有帮助。这也是为什么推荐食用橄榄油。
+                    </view>
+                    <view class="weui-article__p">
+                        2、以饱和脂肪酸为主组成的脂肪在室温下呈固态，多为动物脂肪，如牛油、羊油、猪油等。
+                    </view>
+                    <view class="weui-article__p">
+                        但也有例外，如深海鱼油虽然是动物脂肪，但它富含多不饱和脂肪酸，如20碳5烯酸（EPA）和22碳6烯酸（DHA），因而在室温下呈液态。虽然这类饱和脂肪已被人喊人打，但是有许多研究表明，饱和脂肪对刺激人体分泌睾酮、维持人体瘦素水平有帮助，所以适当摄入饱和脂肪也是减脂的必须环节，不用人人自危。
+                    </view>
+                    
+                    <view class="weui-article__h4">（四）矿物质和微量元素</view>
+                    <view class="weui-article__p">
+                        矿物质又称无机盐，也是构成人体组织和维持正常生理活动的重要物质。体内含量大于体重的0.01%的称为常量元素：包括钙、磷、钾、钠、镁、氯、硫等七种，它们都是人体必需的元素。含量小于体重的0.01%的称为微量元素，种类很多，目前人们认为必需的微量元素有14种：锌、铜、铁、铬、钴、锰、钼、锡、钒、碘、硒、氟、镍、硅。微量元素在体内含量虽小，却有很重要的生理功能。矿物质和微量元素与其它营养素一样，并不是“多多益善”。
+                    </view>
+
+                    <view class="weui-article__h4">（五）能量和其他</view>
+                    <view class="weui-article__p">
+                        1、基础代谢：是指维持生命的最低热能消耗。即人体在安静和恒温条件下，禁食12小时后，静卧、放松而又清醒时的热能消耗。提高肌肉量可以提高基础代谢，因为肌肉在静止状态下的耗能大。
+                    </view>
+                    <view class="weui-article__p">
+                        2、基础代谢率：是指人体处于基础代谢状态下，每小时每平方米体表面积（或每公斤体重）的热能消耗。
+                    </view>
+                    <view class="weui-article__p">
+                        3、食物热效应：人体在摄食过程中，由于要对食物中营养素进行消化，吸收、代谢转化等，需要额外消耗能量，同时引起体温升高和散发热能，这种因摄食而引起的热能的额外消耗称食物热效应。通常来说，摄入蛋白质所产生的食物热效应是三大营养素中最高的，所以减脂期适当提高蛋白质摄入比例是有必要的。
+                    </view>
+                    <view class="weui-article__p">
+                        4、代谢差异来源，代谢并不是固定不变的！
+                    </view>
+                    <view class="weui-article__p">
+                        ①体格的影响：体表面积大者，散发热能也多，所以同等体重者，瘦高者基础代谢高于矮胖者
+                    </view>
+                    <view class="weui-article__p">
+                        ②不同生理、病理状况的影响：儿童和孕妇的基础代谢相对较高。成年后，随年龄增长，基础代谢水平不断下降。生病发热时，甲状腺等有关激素水平异常时，也能改变基础代谢的热能消耗。
+                    </view>
+                    <view class="weui-article__p">
+                        ③环境条件的影响：炎热或寒冷，过多摄食，精神紧张等都可使基础代谢水平升高。
+                    </view>
+                    <view class="weui-article__p">
+                        ④尼古丁和咖啡因可以刺激基础代谢。
+                    </view>
+                </view>
+                            
+            </view>
+    </view>
+</view>
+

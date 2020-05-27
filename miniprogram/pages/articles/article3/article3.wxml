@@ -1,0 +1,107 @@
+<!--miniprogram/pages/articles/article3/article3.wxml-->
+<!--miniprogram/pages/articles/article2/article2.wxml-->
+<view class="page" data-weui-theme="{{theme}}">
+    <view class="page__hd">
+        <view class="page__title">减脂饮食示例</view>
+        <view class="page__desc">来源：知乎</view>
+    </view>
+    <view class="page__bd">
+        <view class="weui-article">
+                <view class="weui-article__section">
+                    <view class="weui-article__h3">早餐：高碳水+中量蛋白质+适量不饱和脂肪酸</view>
+                    <view class="weui-article__p">
+                        示例：【燕麦粥一小碗+全麦面包两片+白煮蛋白3个+无盐混合坚果一小把】
+                    </view>
+                    <view class="weui-article__p">
+                        <image class="weui-article__img" src="../images/img_a3_1.jpg" mode="aspectFit" style="height: 180px" />
+                    </view>
+                    <view class="weui-article__p">
+                        做法：水烧开煮燕麦，煮蛋器煮蛋···煮熟就行
+                    </view>
+                    <view class="weui-article__p">
+                        坚果可以配合少量蔓越莓干洒在燕麦粥里吃 
+                    </view>                   
+                </view>
+                <view class="weui-article__section">
+                    <view class="weui-article__h3">午餐：中量碳水+高蛋白质+适量脂肪</view>
+                    <view class="weui-article__p">
+                        示例：【黑米糙米混合米饭+汽蒸牛肉+蒸金针菇/娃娃菜】 
+                    </view>
+                    <view class="weui-article__p">
+                        <image class="weui-article__img" src="../images/img_a3_2.jpg" mode="aspectFit" style="height: 180px" />
+                    </view>
+                    <view class="weui-article__p">
+                        做法：
+                    </view>
+                    <view class="weui-article__p">
+                        【黑米糙米混合米饭】
+                    </view>
+                    <view class="weui-article__p">
+                        ·将黑米、糙米和白米饭，按照1：1：1的量混合
+                    </view>
+                    <view class="weui-article__p">
+                        ·倒入电饭锅，按正常流程煮熟即可 
+                    </view>
+                    <view class="weui-article__p">
+                        【汽蒸牛肉】
+                    </view>
+                    <view class="weui-article__p">
+                        ·选脂肪相对较少的切片牛肉（如澳洲牛肉）
+                    </view>
+                    <view class="weui-article__p">
+                        ·水烧开，大火隔水蒸4分钟即可
+                    </view>
+                    <view class="weui-article__p">
+                        ·娃娃菜金针菇可同蒸
+                    </view>
+                    <view class="weui-article__p">
+                        ·吃时倒入喜欢的酱汁，如海鲜酱油，日式醋汁，可凸显食物的鲜美原味~~ 
+                    </view>                    
+                </view>
+                <view class="weui-article__section">
+                    <view class="weui-article__h3">晚餐：较少碳水+高蛋白质+适量脂肪</view>
+                    <view class="weui-article__p">
+                        示例：【金枪鱼牛油果三文治+鲜虾鹌鹑蛋沙拉】
+                    </view>
+                    <view class="weui-article__p">
+                        <image class="weui-article__img" src="../images/img_a3_3.jpg" mode="aspectFit" style="height: 180px" />
+                    </view>
+                    <view class="weui-article__p">
+                        做法：
+                    </view>
+                    <view class="weui-article__p">
+                        【金枪鱼牛油果三文治】
+                    </view>
+                    <view class="weui-article__p">
+                        ·牛油果对半切，取小半个果肉
+                    </view>
+                    <view class="weui-article__p">
+                        ·加入水浸金枪鱼罐头，用勺子捣碎（不用加盐！）
+                    </view>
+                    <view class="weui-article__p">
+                        ·全麦面包去皮后放烤箱（或烧热的平底锅）里稍微烤去些水分
+                    </view>
+                    <view class="weui-article__p">
+                        ·将牛油果金枪鱼混合料夹入全麦面包即可
+                    </view>
+                    <view class="weui-article__p">
+                        【鲜虾鹌鹑蛋沙拉】
+                    </view>
+                    <view class="weui-article__p">
+                        ·白虾数只，洗净后开水烫熟
+                    </view>
+                    <view class="weui-article__p">
+                        ·鹌鹑蛋煮熟
+                    </view>
+                    <view class="weui-article__p">
+                        ·虾去壳，蛋去皮，和洗净的生菜番茄等拌在一起
+                    </view>
+                    <view class="weui-article__p">
+                        ·浇上喜欢的低脂沙拉酱汁即可
+                    </view>                    
+                </view>            
+            </view>
+    </view>
+</view>
+
+
