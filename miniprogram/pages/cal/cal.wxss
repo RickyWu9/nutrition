@@ -71,3 +71,32 @@
       height: 20px;  
       text-align: center;  
     }
+.carts-footer {
+  width: 100%;
+  height: 80rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+   position: fixed;
+    bottom: 0;
+    border-top: 1px solid #eee;
+    background: #eee;
+    z-index:999;
+}
+.carts-footer text {
+  font-size: 30rpx;
+  margin-left: 8rpx;
+  line-height: 10rpx;
+}
+.carts-footer .button {
+  line-height: 80rpx;
+  text-align: center;
+  width:220rpx;
+  height: 80rpx;
+  background-color: #0c0c0c;
+  color: white;
+  font-size: 36rpx;
+  font-weight: 700;
+  border-radius: 0;
+  border: 0;
+}

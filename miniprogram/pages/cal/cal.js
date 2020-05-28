@@ -5,6 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    carts: [],
 
     list01: [
       { item_id: 1 }, { item_id: 11 }, { item_id: 11 },
@@ -94,5 +95,31 @@ Page({
   },
    a: function () {
 
-  }
+  },
+  bindSelectAll: function () {
+    var selectedAllStatus = this.data.selectedAllStatus;
+    selectedAllStatus = !selectedAllStatus;
+    var carts = this.data.carts;
+    for (var i = 0; i < carts.length; i++) {
+      carts[i].selected = selectedAllStatus;
+    }
+    this.setData({
+     selectedAllStatus: selectedAllStatus,
+     carts: carts
+    });
+    this.sum()
+  },
+  sum: function () {
+    var carts = this.data.carts;
+    var total = 0;
+    for (var i = 0; i < carts.length; i++) {
+      if (carts[i].selected) {
+        total += carts[i].num * carts[i].price;
+      }
+    }
+    this.setData({
+      carts: carts,
+      total: 'cal: ' + total
+    });
+  },
 })

@@ -1,7 +1,5 @@
 <view class="page">
 <!-- 总数 -->
-
-<view>食物选择</view>
 <view class='page_row' bindtap="suo">  
       <view class="search">  
         <view class="df search_arr">  
@@ -72,5 +70,12 @@
     </block>
   </view>
   </view>
+  <view class="carts-footer">
+   <view bindtap="bindSelectAll">
+       <icon wx:if="{{selectedAllStatus}}" type="success_circle" size="20"/>
+        <text class="reds">总计卡路里：{{total}}</text>
+   </view>
+       <view class="button" bindtap='bindCheckout'>加入我的食谱</view>
+</view>
 
 
