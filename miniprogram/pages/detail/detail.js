@@ -1,50 +1,28 @@
-// miniprogram/pages/my/my.js
+// pages/details/details.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    height:null,
-    weight:null,
-    bmi:0,
-    dietList:[{title:"饮食方案名称",context:"内容",note:"备注"}]
-  },
-
-  calBMI: function(){
-    console.log("calBMI");
-    var height = this.data.height;
-    var weight = this.data.weight;
-    if(height&&weight){
-      console.log("height,weight");
-      this.setData({
-        bmi:height==0?0:weight/(height*height)
-      });
+    diet:{
+      title:"未初始化的标题",
+      context:"未初始化的内容",
+      note:"未初始化的备注"
     }
-  },
-
-  inputData:function(event){
-    console.log(event);
-    let name = event.currentTarget.dataset.name;
-    this.setData({
-      [name]:event.detail.value
-    });
-  },
-
-  goToDetail: function(event){
-    console.log(event)
-    var dataset = event.currentTarget.dataset;
-   
-    wx.navigateTo({
-      url: `../detail/detail?title=${dataset.title}&context=${dataset.context}&note=${dataset.note}`
-    })
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var myDiet= {
+      title:options.title,
+      context:options.context,
+      note:options.note
+    };
+    console.log(myDiet);
+    this.setData({diet:myDiet});
   },
 
   /**

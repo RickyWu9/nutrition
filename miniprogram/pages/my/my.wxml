@@ -1,2 +1,55 @@
 <!--miniprogram/pages/my/my.wxml-->
-<text>我的信息</text>
+<view class="weui-panel weui-panel_access">
+			<view class="weui-panel__hd">我的信息</view>
+			<view class="weui-panel__bd">
+				<!-- <view class="page-section">
+          <view class="weui-cells__title">身高(m)：</view>
+          <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_input">
+              <input class="weui-input" type="digit" placeholder="在这里输入身高" bindblur="inputData" data-name="height" value="{{height}}"/>
+            </view> 
+          </view>
+        </view> -->
+        <view class="my-bar">
+            <view class="my-bar__hint">身高(m)：</view>
+            <view class="my-bar__form">
+                <view class="my-bar__box">
+                    <input class="my-bar__input" type="digit" placeholder="在这里输入身高" bindblur="inputData" data-name="height" value="{{height}}"/>
+                </view>
+            </view>
+        </view>
+
+        <view class="my-bar">
+            <view class="my-bar__hint">体重(kg)：</view>
+            <view class="my-bar__form">
+                <view class="my-bar__box">
+                    <input class="my-bar__input" type="digit" placeholder="在这里输入体重" bindblur="inputData" data-name="weight" value="{{weight}}"/>
+                </view>
+            </view>
+        </view>
+        
+        <view class="result-bar">
+            <view class="my-bar">
+                <view class="my-bar__hint">BMI：</view>
+                <view class="my-bar__form">
+                    <view class="my-bar__box">
+                        <view class="my-bar__input">{{bmi}}</view>
+                    </view>
+                </view>
+                <button class="my-bar__btn" size="mini" bindtap="calBMI">计算</button>
+            </view>
+            <view class="note">
+                <text decode="{{true}}" space="nbsp">正常范围：18.5 &lt;= BMI &lt; 24\n过重：24 &lt;= BMI &lt; 27\n轻度肥胖：27 &lt;= BMI &lt; 30\n中度肥胖：30 &lt;= BMI &lt; 35\n重度肥胖：BMI &gt; 35\n</text>
+            </view>
+        </view>      
+			</view>
+      <view class="weui-panel__bd">
+      <scroll-view></scroll-view>
+      <h3 class="weui-media-box__title">饮食方案</h3>
+        <view class="weui-media-box weui-media-box_text" wx:for="{{dietList}}" wx:key="title" bindtap="goToDetail" 
+        data-title="{{item.title}}" data-context="{{item.context}}" data-note="{{item.note}}">
+          <h4 class="weui-media-box__title">{{item.title}}</h4>
+					<view class="weui-media-box__desc">{{item.context}}</view>
+        </view>
+			</view>
+</view>

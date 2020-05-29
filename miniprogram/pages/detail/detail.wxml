@@ -1,0 +1,9 @@
+<!--pages/details/details.wxml-->
+<view class="weui-panel weui-panel_access">
+			<view class="weui-panel__hd">营养方案详情</view>
+			<view class="weui-panel__bd">
+				<h4 class="weui-media-box__title">{{diet.title}}</h4>
+				<view class="weui-media-box__desc">{{diet.context}}</view>
+        <view class="weui-media-box__desc">{{diet.note}}</view>
+			</view>
+</view>
