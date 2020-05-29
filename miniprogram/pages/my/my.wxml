@@ -38,18 +38,23 @@
                 </view>
                 <button class="my-bar__btn" size="mini" bindtap="calBMI">计算</button>
             </view>
-            <view class="note">
+            <view class="explanation">
                 <text decode="{{true}}" space="nbsp">正常范围：18.5 &lt;= BMI &lt; 24\n过重：24 &lt;= BMI &lt; 27\n轻度肥胖：27 &lt;= BMI &lt; 30\n中度肥胖：30 &lt;= BMI &lt; 35\n重度肥胖：BMI &gt; 35\n</text>
             </view>
         </view>      
 			</view>
       <view class="weui-panel__bd">
-      <scroll-view></scroll-view>
-      <h3 class="weui-media-box__title">饮食方案</h3>
-        <view class="weui-media-box weui-media-box_text" wx:for="{{dietList}}" wx:key="title" bindtap="goToDetail" 
-        data-title="{{item.title}}" data-context="{{item.context}}" data-note="{{item.note}}">
-          <h4 class="weui-media-box__title">{{item.title}}</h4>
-					<view class="weui-media-box__desc">{{item.context}}</view>
-        </view>
+          <view class="weui-cells__title">饮食方案</view>
+          <view class="weui-cells weui-cells_after-title">
+              <view class="weui-media-box weui-media-box_text diet-bar" wx:for="{{dietList}}" wx:key="title">
+                  <view class="dietItem"  bindtap="goToDetail" data-title="{{item.title}}" data-context="{{item.context}}" data-note="{{item.note}}">
+                      <h4 class="weui-media-box__title">{{item.title}}</h4>
+					            <view class="weui-media-box__desc">{{item.brief}}</view>
+                  </view>
+                  <view class="deleteDiet">
+                      <button class="my-bar__btn" size="mini" bindtap="deleteDiet" type="warn" data-index="{{index}}">删除</button>
+                  </view>
+              </view>  
+          </view>
 			</view>
 </view>
