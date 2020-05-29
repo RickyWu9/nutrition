@@ -1,9 +1,17 @@
 <!--pages/details/details.wxml-->
-<view class="weui-panel weui-panel_access">
-			<view class="weui-panel__hd">营养方案详情</view>
-			<view class="weui-panel__bd">
-				<h4 class="weui-media-box__title">{{diet.title}}</h4>
-				<view class="weui-media-box__desc">{{diet.context}}</view>
-        <view class="weui-media-box__desc">{{diet.note}}</view>
-			</view>
+<view class="page" data-weui-theme="{{theme}}">
+    <view class="page__hd">
+        <view class="page__title">{{diet.title}}</view>
+        <view class="page__desc">备注：{{diet.note}}</view>
+    </view>
+    <view class="page__bd">
+        <view class="weui-article">
+                <view class="weui-article__section">
+                    <view class="weui-article__h3">具体方案</view>
+                    <view class="weui-article__p">
+                        <text decode="{{true}}" space="nbsp">{{diet.context}}</text>
+                    </view>
+                </view>
+            </view>
+    </view>
 </view>

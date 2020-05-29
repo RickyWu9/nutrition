@@ -46,6 +46,7 @@
   color: rgb(233, 93, 41);
   white-space: nowrap;
 }
+
 .my-bar__btn {
   margin-left: 10rpx;
   font-size: 100%;
@@ -77,5 +78,8 @@
   width: 80%;
 }
 .deleteDiet {
+  margin-left: 10rpx;
+  font-size: 100%;
+  white-space: nowrap;
   width:20%;
 }
