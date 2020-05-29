@@ -8,6 +8,7 @@ Page({
     height:null,
     weight:null,
     bmi:"现在的数据计算不出yo",
+    assess:"",
     // 需要pages/cal中存在添加dietList的功能，cal的逻辑设计取决于下方接口描述
     // 传递的数据包括下方dietList实例中的四个属性，其中title为主键，cal在插入数据时要检查title是否重复
     // 已有addDiet函数且功能包括title检查，但不确定是否正确以及可用
@@ -28,13 +29,44 @@ Page({
     var weight = this.data.weight;
     if(height&&weight&&height>0&&weight>0){
       console.log(height,weight);
+      let bmi_ = weight/(height*height);
       this.setData({
-        bmi:weight/(height*height)
+        bmi:bmi_
       });
+      if(bmi_>10&&bmi_<18.5){
+        this.setData({
+          assess:"唔，有些瘦"
+        });
+      }else if(bmi_>=18.5&&bmi_<24){
+        this.setData({
+          assess:"不可思议，你很正常啊"
+        });
+      }else if(bmi_>=24&&bmi_<27){
+        this.setData({
+          assess:"重了点，重了点"
+        });
+      }else if(bmi_>=27&&bmi_<30){
+        this.setData({
+          assess:"轻度肥胖"
+        });
+      }else if(bmi_>=30&&bmi_<35){
+        this.setData({
+          assess:"中度肥胖"
+        });
+      }else if(bmi_>35&&bmi_<100){
+        this.setData({
+          assess:"重度肥胖"
+        });
+      }else{
+        this.setData({
+          assess:"呃，这数据异于常人，不好评价"
+        });
+      }
     }else{
       console.log("calBMI failed");
       this.setData({
-        bmi:"现在的数据计算不出yo"
+        bmi:"现在的数据计算不出yo",
+        assess:""
       });
     }
   },
