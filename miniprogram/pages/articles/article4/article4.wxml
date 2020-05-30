@@ -1,0 +1,49 @@
+<!--miniprogram/pages/articles/article4/article4.wxml-->
+<view class="page" data-weui-theme="{{theme}}">
+    <view class="page__hd">
+        <view class="page__title">身体出现这5个迹象，提醒你吃盐太多了！</view>
+        <view class="page__desc">来源：工人日报</view>
+    </view>
+    <view class="page__bd">
+        <view class="weui-article">
+                <view class="weui-article__section">
+                    <view class="weui-article__p">
+                        “我吃的盐比你吃的饭还多！”这话经常从家里长辈们口中听到。但是，盐吃多了可真不好。正常情况下一家三口一年的食用的盐大概应该是16袋，但是实际情况远远超过标准的摄入量。一项调查显示，我国南方每人每天大概摄入8-10克盐，北方人平均摄入18克，还有一些重口味的人每天能摄入20-25克甚至更多的盐。平均算下来，我国每人每日摄盐量几乎高达14.5克！那么，身体出现哪种信号提醒着盐吃多了呢？
+                    </view>
+                </view>
+                <view class="weui-article__section">
+                    <view class="weui-article__h3">1 嘴干</view>
+                    <view class="weui-article__p">
+                        在食用了含有大量钠的食物之后，身体会感觉盐和水的含量失衡了。为了恢复平衡，你需要多喝水。因此，大脑会发出口渴的信号，促使你狂饮。
+                    </view>
+                </view>            
+                <view class="weui-article__section">
+                    <view class="weui-article__h3">2 反应变慢</view>
+                    <view class="weui-article__p">
+                        如果长期吃太多的盐，可能会导致人脱水。人一旦脱水，就不能清晰地思考问题，常有反应变慢的表现。
+                    </view>
+                </view>       
+                <view class="weui-article__section">
+                    <view class="weui-article__h3">3 手指变粗</view>
+                    <view class="weui-article__p">
+                        如果你突然发现，在体重没有任何增长的情况下，手指却戴不进去原本合适尺寸的戒指了，那么这很有可能是水潴留造成的。长期摄入过多的盐，就可能会导致这样的情况。
+                    </view>
+                </view>       
+                <view class="weui-article__section">
+                    <view class="weui-article__h3">5 总想排尿</view>
+                    <view class="weui-article__p">
+                        发表在《英国医学杂志》上的一项研究成果表明：与每天摄入1500毫克钠的人相比，每天食用3500毫克钠的成年人患头痛的风险高出了近1/3。
+                    </view>
+                </view>       
+                <view class="weui-article__section">
+                    <view class="weui-article__h3">4 头痛</view>
+                    <view class="weui-article__p">
+                        喝了太多的水并不是让你尿意频繁的唯一原因。令人惊讶的是，吃了太多的盐也会产生相同的效果。当人体摄入了过多盐的时候，人体的肾脏器官就会加班加点地工作，才能把体内多余的盐排出体外，就会导致小便增多。
+                    </view>
+                </view>    
+            </view>
+    </view>
+</view>
+
+
+

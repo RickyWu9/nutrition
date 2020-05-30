@@ -1,0 +1,50 @@
+<!--miniprogram/pages/articles/article5/article5.wxml-->
+<view class="page" data-weui-theme="{{theme}}">
+    <view class="page__hd">
+        <view class="page__title">吃鸡肉，喝鸡汤</view>
+        <view class="page__desc">来源：科学松鼠会</view>
+    </view>
+    <view class="page__bd">
+        <view class="weui-article">
+                <view class="weui-article__section">
+                    <view class="weui-article__p">
+                        有网友说喝鸡汤更有营养，这大概是绝大多数同胞的看法。在传统的养生之道里，喝汤是很重要的一个方面。那么，喝鸡汤更有营养到底是以讹传讹还是确有其科学道理？我们需要分成两个问题来看：第一，我们要从鸡肉（鸡汤）中获取什么营养？第二，鸡肉在炖汤的过程中发生了什么变化？
+                    </view>
+                </view>
+                <view class="weui-article__section">
+                    <view class="weui-article__p">
+                        第一个问题，从现代科学的观点来看，鸡肉为我们提供的营养成分主要是蛋白质，其他的成分主要还有：脂肪（好像大家现在避之不及）、维生素、钙等矿物质。“鸡汤营养好”主要是一个传统养生的概念。当然，传统的养生之道认为鸡汤里有某些“培本固元”、“增气生精”的神奇成分，现代科学看不见摸不着，用仪器检测不到，只是某个老祖宗说有所以就有了。所以我们需要先说明：这儿所说的营养，是指现代科学意义上的营养。
+                    </view>
+                </view>            
+                <view class="weui-article__section">
+                 <view class="weui-article__p">
+                        理清了上一个问题，下面就好办了。鸡肉中的脂肪并不多，我们也不想多吃；维生素和其他矿物质虽然有，但是鸡肉也不是它们的主要来源，所以我们也可以不去重点关注。人们从鸡肉中获取的主要营养成分，只是蛋白质。
+                    </view>
+                </view>       
+                <view class="weui-article__section">
+                    <view class="weui-article__p">
+                        在炖鸡肉的过程中，脂肪、维生素和骨头中的钙比较容易溶解到汤中。脂溶性的香味物质是溶解在脂肪里的，随着脂肪一并进入汤里，而水溶性的香味物质自然容易进入汤里，这是为什么汤好喝的原因。但是，汤好喝并不意味着我们关心的营养成分蛋白质也进入了汤里。鸡肉中的蛋白质种类比较多，在炖的过程中只有一小部分会溶到汤里。有多少蛋白质溶进汤里受盐浓度和煮汤时间的影响很大，不过很难超过总数的10％。也就是说，只喝汤不吃肉的话相当于扔掉了90％以上的蛋白质。
+                    </view>
+                </view>       
+                <view class="weui-article__section">
+                    <view class="weui-article__p">
+                        流行全国的白斩鸡，是将鸡肉在不加盐的水里快速煮熟，实际上是尽可能避免蛋白质和其他成分进入汤里，从而保持鸡肉的鲜美。美国没有喝鸡汤的习惯，他们烹制鸡肉时更是极力避免损失其中的营养成分，所以通常用烤、炸或者蒸这样的烹饪方法。
+                    </view>
+                </view>       
+                <view class="weui-article__section">
+                    <view class="weui-article__p">
+                        从物质守恒的角度来说，鸡肉中的营养成分是固定的。简单的加热不能产生新的营养成分，而长时间的加热倒有可能破坏某些营养成分。就最重要的成分蛋白质而言，很小一部分在汤里，很大一部分在肉中。
+                    </view>
+                </view>    
+                <view class="weui-article__section">
+                    <view class="weui-article__p">
+                        当然，对于很多人而言，吃的时候考虑的更多的是美味而不是营养。而好的汤，确实比肉要好吃。如果用一句话来总结这个问题的话，就是：要美味，喝鸡汤；要营养，吃鸡肉。
+                    </view>
+                </view>    
+            </view>
+    </view>
+</view>
+
+
+
+
