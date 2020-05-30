@@ -21,7 +21,7 @@ Page({
       context:options.context,
       note:options.note
     };
-    console.log(myDiet);
+    console.log("打开饮食方案详情页面:",myDiet);
     this.setData({diet:myDiet});
   },
 

@@ -1,8 +1,8 @@
 <!--miniprogram/pages/my/my.wxml-->
 <view class="weui-panel weui-panel_access page">
-			<view class="weui-panel__hd">我的信息</view>
-			<view class="weui-panel__bd">
-				<!-- 以下为某种输入框格式
+	<view class="weui-panel__hd">我的信息</view>
+	<view class="weui-panel__bd">
+	    <!-- 以下为某种输入框格式
         <view class="page-section">
           <view class="weui-cells__title">身高(m)：</view>
           <view class="weui-cells weui-cells_after-title">
@@ -41,7 +41,7 @@
                 <!-- <button class="my-bar__btn" size="mini" bindtap="calBMI">计算</button> -->
             </view>
             <view class="explanation">
-                <view>你的评价是——{{assess}}</view>
+                <view>你的身体评价是——{{assess}}</view>
                 <!-- 以下为参照表，不提供评估功能时，让用户自己参照 -->
                 <!-- <text decode="{{true}}" space="nbsp">正常范围：18.5 &lt;= BMI &lt; 24\n过重：24 &lt;= BMI &lt; 27\n轻度肥胖：27 &lt;= BMI &lt; 30\n中度肥胖：30 &lt;= BMI &lt; 35\n重度肥胖：BMI &gt; 35\n</text> -->
             </view>

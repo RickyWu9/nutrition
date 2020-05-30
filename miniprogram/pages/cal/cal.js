@@ -150,4 +150,27 @@ Page({
       list: list
     })
   },
+  
+  //以下为向my的dietList添加diet的函数接口，修改后即可使用
+  //以及为啥cal页面写了两个onLoad
+  bindCheckout:function(){
+    //数据格式如下diet所示，其中title为主键，title重复时会插入失败
+    //detail详情页中context的显示方式为<text decode="{{true}}" space="nbsp">{{diet.context}}</text>
+    let newDiet = {
+      title:"饮食方案名称add1",
+      brief:"简介add1",
+      context:"内容add1",
+      note:"备注add1"
+    };
+
+    //添加diet功能实现如下所示,res返回添加是否成功的布尔值
+    let app = getApp(); 
+    const res = app.add_diet(newDiet);
+    console.log("更新是否成功:",res);
+
+    //添加失败的处理如下(如提醒添加失败)
+    if(!res){
+
+    }
+  }
 })

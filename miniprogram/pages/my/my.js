@@ -1,4 +1,6 @@
 // miniprogram/pages/my/my.js
+var app = getApp();
+
 Page({
 
   /**
@@ -8,27 +10,18 @@ Page({
     height:null,
     weight:null,
     bmi:"现在的数据计算不出yo",
-    assess:"",
-    // 需要pages/cal中存在添加dietList的功能，cal的逻辑设计取决于下方接口描述
-    // 传递的数据包括下方dietList实例中的四个属性，其中title为主键，cal在插入数据时要检查title是否重复
-    // 已有addDiet函数且功能包括title检查，但不确定是否正确以及可用
-    // detail详情页中context的显示方式为<text decode="{{true}}" space="nbsp">{{diet.context}}</text>
-    dietList:[
-    {title:"饮食方案名称1",brief:"简介1",context:"内容1",note:"备注1"},
-    {title:"饮食方案名称2",brief:"简介2",context:"内容2",note:"备注2"},
-    {title:"饮食方案名称3",brief:"简介3",context:"内容3",note:"备注3"},
-    {title:"饮食方案名称4",brief:"简介4",context:"内容4",note:"备注4"},
-    {title:"饮食方案名称5",brief:"简介5",context:"内容5",note:"备注5"}
-    ]
+    assess:" ",
+    // 需要pages/cal中存在添加dietList的功能，接口已在cal.js中写明
+    dietList:[]
   },
 
-  //计算bmi
+  //计算bmi，根据bmi变更assess
   calBMI: function(){
     console.log("calBMI");
     var height = this.data.height;
     var weight = this.data.weight;
     if(height&&weight&&height>0&&weight>0){
-      console.log(height,weight);
+      console.log("calBMI passed, assess provided");
       let bmi_ = weight/(height*height);
       this.setData({
         bmi:bmi_
@@ -74,7 +67,7 @@ Page({
   //如果my.wxml中改为直接用双向绑定输入数据，则注释“失去焦点时才调用”的
   //这个inputData函数，并恢复my.wxml中bmi的计算按钮
   inputData:function(event){
-    console.log(event);
+    console.log("inputData");
     var name = event.currentTarget.dataset.name;
     this.setData({
       [name]:event.detail.value
@@ -84,7 +77,7 @@ Page({
 
   // 跳转向detail页面的同时传去“标题、内容和备注”三项数据
   goToDetail: function(event){
-    console.log(event)
+    console.log("goToDetail")
     var dataset = event.currentTarget.dataset;
    
     wx.navigateTo({
@@ -92,30 +85,22 @@ Page({
     })
   },
 
-  //按index删除饮食方案列表中的一项
+  //利用globalData中dietList的引用，按index删除饮食方案列表中的一项
   deleteDiet:function(event){
-    console.log(event);
     var list = this.data.dietList;
     var index = event.currentTarget.dataset.index;
+    console.log("删除饮食方案:",list[index]);
     list.splice(index,1);
     this.setData({
       dietList:list
     });
   },
 
-  //不确定是否正确的addDiet函数
-  addDiet:function(newDiet){
-    console.log("addDiet");
-    var list = this.data.dietList;
-    for(diet in list){
-      if(diet.title==newDiet.title){
-        console.log("insert failed");
-        return;
-      }
-    }
-    list.push(newDiet);
+  //在onLoad添加监听后，得以用全局属性addDiet的读写动作来刷新my页面中的dietList列表，参见app中watchDietList方法
+  updateDiet:function(){
+    console.log("updateDiet");
     this.setData({
-      dietList:list
+      dietList:this.data.dietList
     });
   },
 
@@ -123,7 +108,16 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    //若不在onLoad中setData而只是在data里写dietList:app.globalData.dietList的话
+    //则若在my加载前用cal添加diet，再打开my页面，my中的dietList不会自动更新
+    //(data里的初始值会在onLoad前赋好，但是没有成功传递引用吗？)
+    console.log("dietList在onLoad前为:",this.data.dietList)
+    this.setData({
+      dietList:app.globalData.dietList
+    })
+    //监听全局属性addDiet的变化来刷新my页面中的dietList列表，参见app中watchDietList方法
+    let that = this;
+    getApp().watchDietList(that.updateDiet);
   },
 
   /**

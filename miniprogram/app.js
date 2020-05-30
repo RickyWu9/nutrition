@@ -19,6 +19,52 @@ App({
       traceUser: true,
     })
 
-    this.globalData = {}
+    this.globalData = {
+      //dietList中是供测试用的diet项,投入使用前需将dietList表清空
+      dietList:[
+        {title:"饮食方案名称1",brief:"简介1",context:"内容1",note:"备注1"},
+        {title:"饮食方案名称2",brief:"简介2",context:"内容2",note:"备注2"},
+        {title:"饮食方案名称3",brief:"简介3",context:"内容3",note:"备注3"},
+        {title:"饮食方案名称4",brief:"简介4",context:"内容4",note:"备注4"},
+        {title:"饮食方案名称5",brief:"简介5",context:"内容5",note:"备注5"}
+        ]
+    }
+  },
+
+  //利用setter访问器绑定my中page的引用到app中addDiet属性上，
+  //使得addDiet变动时my立刻发现并做出即时行为(如刷新my页面中dietList),实现watch监听函数效果
+  watchDietList:function(method){
+    console.log("watch added to dietList");
+    var obj = this.globalData;
+    Object.defineProperty(obj,"addDiet", {
+      configurable: true,
+      enumerable: true,
+      set: function (value) {
+        console.log("利用addDiet的setter更新my页面");
+        method();
+      },
+      get:function(){
+        console.log("storage of addDiet not provided");
+        return null;
+      }
+    })
+  },
+
+  add_diet:function(newDiet){
+    console.log("添加饮食方案:",newDiet);
+    var list = this.globalData.dietList;
+    for(let i=0;i<list.length;i++){
+      if(list[i].title==newDiet.title){
+        console.log("insert failed");
+        return false;
+      }
+    }
+    list.push(newDiet);
+
+    //因为希望添加diet时返回布尔值，所以另写了一个函数add_diet，
+    //这使得addDiet本身的setter失去原来意义(下面等式右边的值无用)，只是为了触发my的更新
+    this.globalData.addDiet = newDiet;
+
+    return true;
   }
 })
