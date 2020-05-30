@@ -78,10 +78,10 @@ Page({
   // 跳转向detail页面的同时传去“标题、内容和备注”三项数据
   goToDetail: function(event){
     console.log("goToDetail")
-    var dataset = event.currentTarget.dataset;
+    var diet = event.currentTarget.dataset.diet;
    
     wx.navigateTo({
-      url: `../detail/detail?title=${dataset.title}&context=${dataset.context}&note=${dataset.note}`
+      url: `../detail/detail?title=${diet.title}&calorie=${diet.calorie}&context=${diet.context}&note=${diet.note}`
     })
   },
 
@@ -117,7 +117,7 @@ Page({
     })
     //监听全局属性addDiet的变化来刷新my页面中的dietList列表，参见app中watchDietList方法
     let that = this;
-    getApp().watchDietList(that.updateDiet);
+    app.watchDietList(that.updateDiet);
   },
 
   /**

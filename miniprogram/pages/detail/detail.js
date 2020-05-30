@@ -7,6 +7,7 @@ Page({
   data: {
     diet:{
       title:"未初始化的标题",
+      calorie:"未初始化的卡路里",
       context:"未初始化的内容",
       note:"未初始化的备注"
     }
@@ -18,8 +19,9 @@ Page({
   onLoad: function (options) {
     var myDiet= {
       title:options.title,
+      calorie:options.calorie,
       context:options.context,
-      note:options.note
+      note:options.note?options.note:"无"//若options.note为""则note取"无"
     };
     console.log("打开饮食方案详情页面:",myDiet);
     this.setData({diet:myDiet});

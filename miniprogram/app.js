@@ -22,11 +22,11 @@ App({
     this.globalData = {
       //dietList中是供测试用的diet项,投入使用前需将dietList表清空
       dietList:[
-        {title:"饮食方案名称1",brief:"简介1",context:"内容1",note:"备注1"},
-        {title:"饮食方案名称2",brief:"简介2",context:"内容2",note:"备注2"},
-        {title:"饮食方案名称3",brief:"简介3",context:"内容3",note:"备注3"},
-        {title:"饮食方案名称4",brief:"简介4",context:"内容4",note:"备注4"},
-        {title:"饮食方案名称5",brief:"简介5",context:"内容5",note:"备注5"}
+        {title:"饮食方案名称1",calorie:"calorie1",context:"内容1",note:""},
+        {title:"饮食方案名称2",calorie:"calorie2",context:"内容2",note:"0"},
+        {title:"饮食方案名称3",calorie:"calorie3",context:"内容3",note:undefined},
+        {title:"饮食方案名称4",calorie:"calorie4",context:"内容4",note:"null"},
+        {title:"饮食方案名称5",calorie:"calorie5",context:"内容5",note:"备注5"}
         ]
     }
   },

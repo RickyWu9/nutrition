@@ -154,13 +154,13 @@ Page({
   //以下为向my的dietList添加diet的函数接口，修改后即可使用
   //以及为啥cal页面写了两个onLoad
   bindCheckout:function(){
-    //数据格式如下diet所示，其中title为主键，title重复时会插入失败
+    //数据格式如下diet所示，均为字符串类型，其中title为主键，title重复时会插入失败
     //detail详情页中context的显示方式为<text decode="{{true}}" space="nbsp">{{diet.context}}</text>
     let newDiet = {
-      title:"饮食方案名称add1",
-      brief:"简介add1",
-      context:"内容add1",
-      note:"备注add1"
+      title:"饮食方案名称_add1",//主键
+      calorie:"calorie_add1",//需要自带单位
+      context:"内容_add1",//由选定食物组成，仅在detail页面显示
+      note:""//为食谱的备注，该功能不实现时note需要取""(此时detail页面备注为"无")，仅在detail页面显示
     };
 
     //添加diet功能实现如下所示,res返回添加是否成功的布尔值

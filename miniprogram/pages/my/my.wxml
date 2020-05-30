@@ -51,9 +51,9 @@
           <view class="weui-cells__title diet">饮食方案</view>
           <view class="weui-cells weui-cells_after-title">
               <view class="weui-media-box weui-media-box_text diet-bar" wx:for="{{dietList}}" wx:key="title">
-                  <view class="dietItem"  bindtap="goToDetail" data-title="{{item.title}}" data-context="{{item.context}}" data-note="{{item.note}}">
+                  <view class="dietItem"  bindtap="goToDetail" data-diet="{{item}}">
                       <h4 class="weui-media-box__title">{{item.title}}</h4>
-					            <view class="weui-media-box__desc">{{item.brief}}</view>
+					            <view class="weui-media-box__desc">卡路里: {{item.calorie}}</view>
                   </view>
                   <view class="deleteDiet">
                       <button class="my-bar__btn" size="mini" bindtap="deleteDiet" type="warn" data-index="{{index}}">删除</button>
