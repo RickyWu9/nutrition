@@ -115,7 +115,7 @@ Page({
     this.setData({
       dietList:app.globalData.dietList
     })
-    //监听全局属性addDiet的变化来刷新my页面中的dietList列表，参见app中watchDietList方法
+    //监听全局属性updateDiet的访问来刷新my页面中的dietList列表，参见app中watchDietList方法
     let that = this;
     app.watchDietList(that.updateDiet);
   },
