@@ -51,7 +51,6 @@ App({
     })
   },
 
-  //只要通过该接口改变dietList，my页面就能实时刷新
   add_diet:function(newDiet){
     console.log("添加饮食方案:",newDiet);
     var list = this.globalData.dietList;

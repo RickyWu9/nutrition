@@ -75,7 +75,7 @@ Page({
     this.calBMI();
   },
 
-  // 跳转向detail页面的同时传去“标题、内容和备注”三项数据
+  // 跳转向detail页面的同时传去“标题”数据，由detail页面搜索全局数据dietList并添加相应diet引用
   goToDetail: function(event){
     console.log("goToDetail")
     var diet = event.currentTarget.dataset.diet;
@@ -96,7 +96,7 @@ Page({
     });
   },
 
-  //在onLoad添加监听后，得以用全局属性addDiet的读写动作来刷新my页面中的dietList列表，参见app中watchDietList方法
+  //在onLoad添加监听后，得以用全局属性updateDiet的访问器来刷新my页面中的dietList列表，参见app中watchDietList方法
   updateDiet:function(){
     console.log("updateDiet");
     this.setData({
