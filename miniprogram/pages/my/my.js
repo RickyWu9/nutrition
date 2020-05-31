@@ -81,7 +81,7 @@ Page({
     var diet = event.currentTarget.dataset.diet;
    
     wx.navigateTo({
-      url: `../detail/detail?title=${diet.title}&calorie=${diet.calorie}&context=${diet.context}&note=${diet.note}`
+      url: `../detail/detail?title=${diet.title}`
     })
   },
 
