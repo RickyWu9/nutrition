@@ -53,15 +53,23 @@ App({
 
   add_diet:function(newDiet){
     console.log("添加饮食方案:",newDiet);
-    var list = this.globalData.dietList;
-    for(let i=0;i<list.length;i++){
-      if(list[i].title==newDiet.title){
-        console.log("insert failed");
-        return false;
-      }
+    if(!this.uniq_diet(newDiet.title)){
+      console.log("insert failed");
+      return false;
     }
+    var list = this.globalData.dietList;
     list.push(newDiet);
     this.globalData.updateDiet;
     return true;
   },
+
+  uniq_diet:function(title){
+    var list = this.globalData.dietList;
+    for(let i=0;i<list.length;i++){
+      if(list[i].title==title){
+        return false;
+      }
+    }
+    return true;
+  }
 })

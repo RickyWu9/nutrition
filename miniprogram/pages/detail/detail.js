@@ -48,15 +48,34 @@ Page({
     var map = this.evalObject(name,this.data,value);
     console.log("settingData:",map);
     this.setData(map);
-    app.globalData.updateDiet;
   },
 
   //在失去焦点时，动态地、有条件地更新某属性，同时使组件回到非修改状态
   modifyEnd:function(event){
     console.log("modifyEnd");
     var dataset = event.currentTarget.dataset;
-    if(event.detail.value||dataset.empty){
+    if(event.detail.value||dataset.empty){//empty为true代表可以为空值
       this.settingData(dataset.name,event.detail.value);
+    }
+    this.settingData(dataset.state,false);
+  },
+
+  //因为title不能重复，所以更改标题的方法需要另写
+  titleModifyEnd:function(event){
+    console.log("titleModifyEnd");
+    var dataset = event.currentTarget.dataset;
+    var value = event.detail.value;
+    if(value){
+      if(app.uniq_diet(value)){
+        this.settingData(dataset.name,value);
+        app.globalData.updateDiet;
+      }else if(value!=this.data.diet.title){
+        wx.showToast({
+          title: "标题已存在哦",//最多七个汉字长度
+          icon: "none",
+          duration: 2000
+      });
+      }
     }
     this.settingData(dataset.state,false);
   },

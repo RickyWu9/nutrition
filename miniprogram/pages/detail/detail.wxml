@@ -2,7 +2,7 @@
 <view class="page" data-weui-theme="{{theme}}">
     <view class="page__hd">
         <view class="page__title wrap">
-            <input wx:if="{{title_modify}}" auto-focus type="text" placeholder="标题不能为空哦" bindblur="modifyEnd" 
+            <input wx:if="{{title_modify}}" auto-focus type="text" placeholder="标题既不能为空哦" bindblur="titleModifyEnd" 
             data-name="diet.title" data-state="title_modify" data-empty="{{false}}" value="{{diet.title}}"/>
             <view wx:else bindtap="modifyStart" data-state="title_modify">{{diet.title}}</view>
         </view>
