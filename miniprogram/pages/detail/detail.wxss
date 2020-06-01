@@ -1,8 +1,10 @@
 /* pages/details/details.wxss */
 .page{background-color:var(--weui-BG-2)}image{margin:4px 0}
 
-/* 尝试换行失败，谁来帮帮忙 */
+/* 目前仍不知道如何使连续符号换行 */
 .wrap{
   white-space:pre-line;
   width:100%;
+  word-break:break-all; /* word-break比word-wrap更强力 */
+  /* word-wrap: break-word; */  
 }
