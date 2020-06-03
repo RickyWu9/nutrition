@@ -1,0 +1,45 @@
+<!--miniprogram/pages/articles/article6/article6.wxml-->
+<view class="page" data-weui-theme="{{theme}}">
+    <view class="page__hd">
+        <view class="page__title">西兰花究竟有哪些过“菜”之处</view>
+        <view class="page__desc">来源：知乎</view>
+    </view>
+    <view class="page__bd">
+        <view class="weui-article">
+                <view class="weui-article__section">
+                    <view class="weui-article__p">
+                        对于西兰花的味道和口感，爱吃的人是真的很爱吃，不爱吃的人就......
+                    </view>
+                    <view class="weui-article__p">
+                        作为除了鸡胸肉外，国内外健身达人晒餐最常见的蔬菜，被誉为超级蔬菜的它，营养价值可圈可点。作为十字花科类蔬菜，西兰花中的营养成分，不仅含量高，而且十分全面，主要包括蛋白质、碳水化合物、脂肪、矿物质、维生素C和胡萝卜素等等.....因此，不少健身减肥人群都喜欢吃它，那么它到底有没有那么神奇呢？
+                    </view>
+                </view>
+                <view class="weui-article__section">
+                    <view class="weui-article__h3">富含VC、VA等</view>
+                    <view class="weui-article__p">
+                        西兰花中的营养成分，不仅含量高，而且十分全面，主要包括蛋白质、碳水化合物、脂肪、矿物质、维生素C和胡萝卜素等。西兰花的维生素C含量极高，有利于人的生长发育，更重要的是能提高人体免疫功能，促进肝脏解毒，增强人的体质，增加抗病能力。此外，维生素A含量比白菜高100多倍，西兰花中矿物质成也很全面，钙、磷、铁、钾、锌、锰等含量都很丰富，与同属于十字花科的白菜花相当。
+                    </view>
+                </view>
+                <view class="weui-article__section">
+                    <view class="weui-article__h3">类黄酮物质降血压、血脂</view>
+                    <view class="weui-article__p">
+                        西兰花是含有类黄酮最多的食物之一，类黄酮除了可以防止感染，还是最好的血管清理剂，能够阻止胆固醇氧化，防止血小板凝结，因而减少患心脏病与中风的危险。同时，西兰花属于高纤维蔬菜，能有效降低肠胃对葡萄糖的吸收，进而降低血糖，有效控制糖尿病的病情。
+                    </view>
+                </view>      
+                <view class="weui-article__section">
+                    <view class="weui-article__h3">富含萝卜硫素</view>
+                    <view class="weui-article__p">
+                        十字花科植物中萝卜硫素含量较丰富，是蔬菜中所发现的抗癌效果最好的植物活性物质。萝卜硫素不但具有很强的抗癌活力，还具有很强的抗氧化能力，是目前公认的具有防癌、抗癌，及美容效果的天然产物之一，同时还有助于减缓退化性关节不适。
+                    </view>
+                </view>
+                <view class="weui-article__section">
+                    <view class="weui-article__h3">热量低、饱腹感强</view>
+                    <view class="weui-article__p">
+                        健身人群，尤其是减脂期，需要制造热量缺口，自然热量摄入要控制，但控制热量不是饿肚子，而是调整饮食结构，所以要选择热量相对较低而饱腹感相对较强的食物。西兰花恰好符合这些要求，它热量低，水分多，容易增加饱腹感，而又不至于让体内囤积过多脂肪，不仅有利于减脂期的热量控制，对糖尿病人而言也是不错的选择。
+                    </view>
+                </view>                                        
+            </view>
+    </view>
+</view>
+
+
