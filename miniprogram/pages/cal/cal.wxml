@@ -1,81 +1,100 @@
-<view class="page">
-  
-      <!--pages/searchif/searchif.wxml-->
-<view class='search'>
- <input type='text'
- bindblur='input'/>
- <button type='primary' class='btn' size='mini'>搜索</button>
- <view wx:for="{{list}}" wx:key='' class='lists'>
- <text wx:if="{{list}}">{{item.name+item.cal}}</text>
- </view>
+
+<view class="content">
+
+	<!-- 左边商品种类 -->
+
+	<scroll-view class="classify-container" scroll-y="true">
+
+		<!-- classifySeleted指的是默认选中的那个种类样式就是给标亮 -->
+
+		<!-- bindtap="tapClassify"的意思滑动种类的区域要把顶部的这个种类给拿出来，方便右边的商品的联动 -->
+
+        <view class="classify {{classifySeleted==classGoods.id?'active':''}}" wx:for="{{list}}" wx:for-item="classGoods" wx:key="id" data-id="{{classGoods.id}}" bindtap="tapClassify">
+
+			<view class="name">{{classGoods.className}}</view>
+
+		</view>
+
+	</scroll-view>
+
+	<!-- 右边商品详情 -->
+
+	<scroll-view class="goods-container" scroll-y="true" scroll-into-view="{{classifyViewed}}" bindscroll="onGoodsScroll">
+
+		<view wx:for="{{list}}" wx:for-item="classGoods" wx:key="id" id="{{classGoods.id}}" wx:for-index="classGoodsIndex">
+
+			<view class="title">{{classGoods.className}}</view>
+
+			<!-- 遍历商品种类下的商品 -->
+
+			<view class="goods" wx:for-items="{{classGoods.goods}}" wx:for-item="item" wx:key="{{item.id}}" wx:for-index="goodsIndex">
+
+				<view class="name ellipsis">{{item.name}}</view>
+
+				<view class="surplus">最多可添加数量：{{surplusNum[item.id]}}</view>
+
+				<!-- 优惠价格的判断 -->
+				  <view class="price">cal:{{item.standardPrice}}</view>
+
+				<!-- 加减区域 -->
+
+				<view class='count-style'>
+
+					<!-- 加减采用的下标获取商品的信息 -->
+
+					<image src='../images/jian.png' data-id="{{item.id}}" data-classGoodsIndex="{{classGoodsIndex}}" data-goodsIndex="{{goodsIndex}}" bindtap='subtract'></image>
+
+					<text>{{buyNum[item.id]}}</text>
+
+					<image src='../images/jia.png' data-id="{{item.id}}" data-classGoodsIndex="{{classGoodsIndex}}" data-goodsIndex="{{goodsIndex}}" bindtap='add'></image>
+
+				</view>
+
+			</view>
+
+		</view>
+
+	</scroll-view>
+
 </view>
 
-<!--分类 -->
-<view class="li" data-index="0" bindtap='changeToggle'>
-<view class="left">主食类</view>
-<view class="right">3 <text class="iconfont {{selectedFlag[0]?'icon-shangjiantou':'icon-xiala'}}"> </text>
-      </view>
-  </view>
-  <view hidden="{{!selectedFlag[0]}}">
-    <block wx:for="{{list01}}" wx:for-item="item" wx:for-index="index">
-      <view class="li bg-gray">
-        <view>展开1</view>
-      </view>
-    </block>
-  </view>
+ 
 
-  <view class="li" data-index="1" bindtap='changeToggle'>
-    <view class="left">蔬菜类</view>
-    <view class="right">0
-      <text class="iconfont {{selectedFlag[1]?'icon-shangjiantou':'icon-xiala'}}"> </text>
-    </view>
-  </view>
-  <view hidden="{{!selectedFlag[1]}}">
-    <block wx:for="{{list02}}" wx:for-item="item" wx:for-index="index">
-      <view class="li bg-gray">
-        <view>展开2</view>
+<view class="cart-detail" hidden="{{!showCartDetail || !buySum>0}}">
 
-      </view>
-    </block>
-  </view>
+	<view class="hidden-cart" bindtap="hideCartDetail"></view>
 
-  <view class="li" data-index="2" bindtap='changeToggle'>
-    <view class="left">肉类</view>
-    <view class="right">2
-      <text class="iconfont {{selectedFlag[2]?'icon-shangjiantou':'icon-xiala'}}"> </text>
-    </view>
-  </view>
-  <view hidden="{{!selectedFlag[2]}}">
-    <block wx:for="{{list03}}" wx:for-item="item" wx:for-index="index">
-      <view class="li bg-gray">
-        <view>展开3</view>
+	<scroll-view class="cart-list" scroll-y="true">
 
-      </view>
-    </block>
-  </view>
+		<view class="item" wx:for="{{cart}}" wx:for-index="id" wx:for-item="item" wx:key="id">
 
+			<view class="name ellipsis">{{item.name}}</view>
 
-  <view class="li" data-index="3" bindtap='changeToggle'>
-    <view class="left">水果类</view>
-    <view class="right">3
-      <text class="iconfont {{selectedFlag[3]?'icon-shangjiantou':'icon-xiala'}}"> </text>
-    </view>
-  </view>
- <view hidden="{{!selectedFlag[3]}}">
-    <block wx:for="{{list04}}" wx:for-item="item" wx:for-index="index">
-      <view class="li bg-gray">
-        <view>展开4</view>
-        <view>展开4右边</view>
-      </view>
-    </block>
-  </view>
-  </view>
-  <view class="carts-footer">
-   <view bindtap="bindSelectAll">
-       <icon wx:if="{{selectedAllStatus}}" type="success_circle" size="20"/>
-        <text class="reds">总计卡路里：{{total}}</text>
-   </view>
-       <view class="button" bindtap='bindCheckout'>加入我的食谱</view>
+			<view class="total">￥{{item.buyMoney}}</view>
+
+			<image class='cart-count-style' src='../images/jian.png' data-id="{{item.id}}" data-price="{{item.price}}" data-detail="detail" data-name="{{item.name}}" bindtap='subtract'></image>
+
+			<view class="num">{{item.buyCount}}</view>
+
+			<image class='cart-count-style' src='../images/jia.png' data-id="{{item.id}}" data-price="{{item.price}}" data-detail="cart" data-name="{{item.name}}" bindtap='add'></image>
+
+		</view>
+
+	</scroll-view>
+
 </view>
 
+ 
+
+<view class="cart">
+
+		<view class="showCartDetail" bindtap="showCartDetail">
+
+			<view class="sumMoney">cal:{{sumMoney}}</view>
+
+		</view>
+
+			<button class='submit' bindtap='submit'>添加到我的食谱</button>
+
+	</view>
 
