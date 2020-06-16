@@ -1,13 +1,13 @@
 /* miniprogram/pages/my/my.wxss */
 .page{
-  background-color: khaki;
+  background-color: rgb(255, 255, 255);
 }
 
 .result-bar{
   padding: 8rpx 10rpx;
-  background-color: rgb(242, 249, 217);
-  border-top: 1rpx solid rgb(252, 224, 153);
-  border-bottom: 1rpx solid rgb(252, 224, 153);
+  background-color: rgb(255, 255, 255);
+  border-top: 1rpx solid rgb(255, 255, 255);
+  border-bottom: 1rpx solid rgb(255, 255, 255);
 }
 .my-bar {
   position: relative;
@@ -16,9 +16,9 @@
   display: -webkit-flex;
   display: flex;
   box-sizing: border-box;
-  background-color: rgb(246, 249, 200);
-  border-top: 1rpx solid rgb(252, 224, 153);
-  border-bottom: 1rpx solid rgb(252, 224, 153);
+  background-color: rgb(255, 255, 255);
+  border-top: 1rpx solid rgb(255, 255, 255);
+  border-bottom: 1rpx solid rgb(255, 255, 255);
 }
 .my-bar__form {
   position: relative;
@@ -46,7 +46,7 @@
   height: inherit;
   line-height: inherit;
   font-size: 100%;
-  color: rgb(233, 93, 41);
+  color: rgb(41, 95, 233);
   white-space: nowrap;
 }
 
@@ -72,8 +72,8 @@
   display: -webkit-flex;
   display: flex;
   box-sizing: border-box;
-  background-color: rgb(233, 218, 173);
-  border-top: 1rpx solid rgb(204, 190, 110);
+  background-color: rgb(255, 255, 255);
+  border-top: 1rpx solid rgb(255, 255, 255);
 }
 
 .diet{
