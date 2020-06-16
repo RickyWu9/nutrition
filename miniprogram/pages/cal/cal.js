@@ -1,8 +1,6 @@
 
 var shopList = require('./shopList.js');
 
-var app = getApp();
-
 Page({
 
   data: {
@@ -63,7 +61,7 @@ Page({
 
         //拼接商品的图片,这里写死了开发过程中要写成配置文件
 
-        goods[j].image = 'http://127.0.0.1/object/' + goods[j].image;
+        goods[j].image = goods[j].image;
 
 
 
@@ -447,7 +445,9 @@ Page({
 
 
 
-  submit: function () {
+  //该掏钱了，哈哈
+
+  submit: function (array) {
 
     //组装下参数
 
@@ -491,11 +491,11 @@ Page({
 
     if (buyCount <= 0) {
 
-      return 0.00;
+      return 0.0;
 
     } else {
 
-      return parseFloat(price * buyCount * 10000000 / 10000000).toFixed(2);
+      return parseFloat(price * buyCount * 10000000 / 10000000).toFixed(1);
 
     }
 
@@ -507,7 +507,7 @@ Page({
 
   buySumMoney: function (array) {
 
-    var sum = 0.00;
+    var sum = 0.0;
 
     for (let g in array) {
 
@@ -523,7 +523,7 @@ Page({
 
     }
 
-    return parseFloat(sum).toFixed(2);
+    return parseFloat(sum).toFixed(1);
 
   },
 

@@ -29,12 +29,14 @@
 
 			<view class="goods" wx:for-items="{{classGoods.goods}}" wx:for-item="item" wx:key="{{item.id}}" wx:for-index="goodsIndex">
 
+				<image class="image" src="{{item.image}}"></image>
+
 				<view class="name ellipsis">{{item.name}}</view>
 
-				<view class="surplus">最多可添加数量：{{surplusNum[item.id]}}</view>
+				<view class="surplus">最大添加数量：{{surplusNum[item.id]}}</view>
 
 				<!-- 优惠价格的判断 -->
-				  <view class="price">cal:{{item.standardPrice}}</view>
+				  <view class="price">{{item.standardPrice}}千卡/100g</view>
 
 				<!-- 加减区域 -->
 
@@ -68,9 +70,9 @@
 
 		<view class="item" wx:for="{{cart}}" wx:for-index="id" wx:for-item="item" wx:key="id">
 
-			<view class="name ellipsis">{{item.name}}</view>
+			<view class="name ellipsis">{{item.name}}:</view>
 
-			<view class="total">￥{{item.buyMoney}}</view>
+			<view class="total">{{item.buyMoney}}千卡</view>
 
 			<image class='cart-count-style' src='../images/jian.png' data-id="{{item.id}}" data-price="{{item.price}}" data-detail="detail" data-name="{{item.name}}" bindtap='subtract'></image>
 
@@ -88,13 +90,10 @@
 
 <view class="cart">
 
-		<view class="showCartDetail" bindtap="showCartDetail">
+		<view class="showCartDetail" bindtap="showCartDetail"></view>
 
-			<view class="sumMoney">cal:{{sumMoney}}</view>
+			<view class="sumMoney">总计:{{sumMoney}}千卡</view>
 
-		</view>
-
-			<button class='submit' bindtap='submit'>添加到我的食谱</button>
+			<button class='submit' bindtap='submit'>添加到今日食谱</button>
 
 	</view>
-
