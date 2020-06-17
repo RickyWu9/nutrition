@@ -1,6 +1,8 @@
 /* pages/details/details.wxss */
 .page{background-color:var(--weui-BG-2)}image{margin:4px 0}
 
+/* 求好心人实现一下my和detail粗糙界面的优化o(╥﹏╥)o */
+
 /* 目前仍不知道如何使连续符号换行 */
 .wrap{
   white-space:pre-line;

@@ -1,6 +1,7 @@
 // pages/details/details.js
 var app = getApp();
 
+//功能大体都全，求好心人实现一下my和detail粗糙界面的优化o(╥﹏╥)o
 Page({
 
   /**
