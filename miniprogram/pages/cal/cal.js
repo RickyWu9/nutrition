@@ -32,73 +32,37 @@ Page({
    */
 
   onLoad: function () {
-
     //请求后台得来的商品list，在这里就不写怎么获取的
-
     //在同级包下写了一个数据的js先引用讲解
-
     var list = shopList.List;
-
     // 购买商品的数量
-
     var data = { buyNum: {} };
-
     // 判断商品剩余使用，商品id为键 商品剩余为值
-
     var surplusNum = {};
-
     for (let i in list) {
-
       var id = list[i].id;
-
       // 更换商品种类（id不能以数字开头）
-
       list[i].id = 'a' + id;
-
       var goods = list[i].goods;
-
       for (let j in goods) {
-
         //拼接商品的图片,这里写死了开发过程中要写成配置文件
-
         goods[j].image = goods[j].image;
-
-
-
         data.buyNum[goods[j].id] = 0;
-
         surplusNum[goods[j].id] = goods[j].surplusNum;//判断商品剩余
-
       }
-
     }
-
     //原始list存入data中方便页面遍历
-
     data.list = list;
-
     this.setData(data);
-
     this.setData({
-
       surplusNum: surplusNum,
-
       //作为一个比较的商品剩余
-
       surplusnumInfo: surplusNum,
-
       //默认一个商品种类选中
-
       classifySeleted: list[0].id
-
-    });
-
+    });   
   },
-
-
-
   //加
-
   add: function (e) {
 
     var detail = e.currentTarget.dataset.detail;//是否来自商品列表还是购物车
@@ -151,7 +115,7 @@ Page({
 
         icon: 'none',
 
-        title: '商品剩余数量不足',
+        title: '添加过多！请合理搭配哦！',
 
       })
 
@@ -308,11 +272,7 @@ Page({
     })
 
   },
-
-
-
   //减
-
   subtract: function (e) {
 
     console.log('点击减号')
@@ -442,18 +402,48 @@ Page({
     })
 
   },
+  //清空
+  clear: function(e){
+    
+    console.log("清空清空")
+    
+    var list=shopList.List
+    
+    for(let i in list){      
+      var goods=list[i].goods
+      for(let j in goods){
+        this.data.buyNum[goods[j].id]=0
+        this.data.surplusNum[goods[j].id]=goods[j].surplusNum
+        
+      }
+    }
+    
+    var data={
+      sumMoney:0,
+      cart:[],
+      buyNum: this.data.buyNum,
+      surplusNum: this.data.surplusNum,  
+      buySum: 0
+    }
+    this.setData(data);
+    
+    
+  },
 
 
 
   //该掏钱了，哈哈
 
   submit: function (array) {
-
+    if(this.data.cart.length<=0){
+      return
+    }
     //组装下参数
     console.log(this.data.cart);
     console.log(this.data.sumMoney);   
-    const db = wx.cloud.database()
-    db.collection('listtest').add({
+    const db = wx.cloud.database();
+    
+    db.collection('userDietList').add({
       data: {
         dietList:this.data.cart,
         calorySum:this.data.sumMoney,

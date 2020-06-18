@@ -318,12 +318,19 @@ page {
 .cart .sumMoney {
 
 	color: #f45044;
-
+	text-align:left;
 	font-size: 30rpx;
+	width: 30%;
+	padding-left: 0rpx;
+	background-color:#FFFAF0;
 
-	line-height: 100rpx;
+}
 
-	padding-left: 100rpx;
+.cart .clearCart{	
+	font-size: 35rpx;
+	width: 30%;
+	text-align: center;
+	background-color:#FDF5E6;
 
 }
 
@@ -383,10 +390,9 @@ page {
 
  
 
-.submit{
-
-  margin-right:20rpx;
-
-  width:100rpx;
-
+.cart .submit{
+	font-size: 35rpx;
+	width: 40%;
+  text-align: center;
+	background-color:rgb(255, 230, 184);
 }

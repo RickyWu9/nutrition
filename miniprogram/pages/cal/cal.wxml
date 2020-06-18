@@ -81,8 +81,9 @@
 			<image class='cart-count-style' src='../images/jia.png' data-id="{{item.id}}" data-price="{{item.price}}" data-detail="cart" data-name="{{item.name}}" bindtap='add'></image>
 
 		</view>
-
+	
 	</scroll-view>
+	
 
 </view>
 
@@ -90,10 +91,11 @@
 
 <view class="cart">
 
-		<view class="showCartDetail" bindtap="showCartDetail"></view>
+		
 
-			<view class="sumMoney">总计:{{sumMoney}}千卡</view>
-
-			<button class='submit' bindtap='submit'>添加到今日食谱</button>
+			<view class="sumMoney" bindtap="showCartDetail">
+			<text space="nbsp">总计:{{sumMoney}}\n单位：千卡  </text></view>
+			<button class="clearCart" bindtap="clear"> 清空</button>
+			<button class='submit' bindtap='submit'>添加食谱</button>
 
 	</view>
