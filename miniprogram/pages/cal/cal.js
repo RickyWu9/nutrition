@@ -109,7 +109,7 @@ Page({
 
     //判断商品剩余(第一次加入购物车肯定没有所以加一)
 
-    if (this.data.buyNum[productId] + 1 > this.data.surplusnumInfo[productId]) {
+    if (0== this.data.surplusnumInfo[productId]) {
 
       wx.showToast({
 
@@ -235,7 +235,7 @@ Page({
 
       if (productId == i && surplusnum[i] != 0) {
 
-        if (surplusnum[i] >= this.data.buyNum[i]) {
+        if (surplusnum[i] >=0 ) {
 
           let count = surplusnum[i] - 1;
 

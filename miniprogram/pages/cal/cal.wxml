@@ -33,7 +33,7 @@
 
 				<view class="name ellipsis">{{item.name}}</view>
 
-				<view class="surplus">最大添加数量：{{surplusNum[item.id]}}</view>
+				<view class="surplus">剩余可添加数量：{{surplusNum[item.id]}}</view>
 
 				<!-- 优惠价格的判断 -->
 				  <view class="price">{{item.standardPrice}}千卡/100g</view>

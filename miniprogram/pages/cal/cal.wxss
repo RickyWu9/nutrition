@@ -285,7 +285,9 @@ page {
 
 	height: 100rpx;
 
-	background: #f7f7f7;
+	background-color:transparent;
+	color: transparent;
+	
 
 }
 
@@ -318,12 +320,12 @@ page {
 .cart .sumMoney {
 
 	color: #f45044;
-	text-align:left;
+	text-align:center;
 	font-size: 30rpx;
 	width: 30%;
 	padding-left: 0rpx;
 	background-color:#FFFAF0;
-
+	
 }
 
 .cart .clearCart{	
@@ -331,6 +333,7 @@ page {
 	width: 30%;
 	text-align: center;
 	background-color:#FDF5E6;
+	border-radius: 98rpx;
 
 }
 
@@ -395,4 +398,5 @@ page {
 	width: 40%;
   text-align: center;
 	background-color:rgb(255, 230, 184);
+	border-radius: 98rpx;
 }
