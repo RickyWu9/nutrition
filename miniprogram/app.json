@@ -5,7 +5,8 @@
     "pages/cal/cal",
     "pages/articles/article1/article1",
     "pages/articles/article2/article2",
-    "pages/articles/article3/article3"
+    "pages/articles/article3/article3",
+    "pages/articles/article7/article7"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -15,29 +16,28 @@
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
-    "selectedColor": "#0303030",
+    "selectedColor": "#FF0000",
     "list": [
       {
         "pagePath": "pages/index/index",
         "text": "营养信息",
-        "iconPath":"images/articles.png",
-        "selectedIconPath":"images/articles.png"
+        "iconPath": "images/articles.png",
+        "selectedIconPath": "images/articles.png"
       },
       {
         "pagePath": "pages/cal/cal",
         "text": "卡路里计算",
-        "iconPath":"images/cal.png",
-        "selectedIconPath":"images/cal.png"
+        "iconPath": "images/cal.png",
+        "selectedIconPath": "images/cal.png"
       },
       {
         "pagePath": "pages/my/my",
         "text": "我的",
-        "iconPath":"images/my.png",
-        "selectedIconPath":"images/my.png"
+        "iconPath": "images/my.png",
+        "selectedIconPath": "images/my.png"
       }
     ],
     "color": "black",
-    "selectedColor": "#FF0000",
     "backgroundColor": "white",
     "borderStyle": "white",
     "position": "bottom"

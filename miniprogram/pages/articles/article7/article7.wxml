@@ -1,0 +1,88 @@
+<!--miniprogram/pages/articles/article7/article7.wxml-->
+<view class="page" data-weui-theme="{{theme}}">
+    <view class="page__hd">
+        <view class="page__title">减脂饮食示例</view>
+        <view class="page__desc">来源：知乎</view>
+    </view>
+    <view class="page__bd">
+        <view class="weui-article">
+                <view class="weui-article__section">
+                    <view class="weui-article__p">
+                        我们都知道，饮食是各种健康因素中最基本也最重要的，但面对种种的饮食原则和饮食指南，往往不知该从何下手。今天，就来给大家分享三个最基本的饮食改善的着手点：低盐，杂粮替代精制主食，多吃水果。
+                    </view>
+                    <view class="weui-article__p">
+                        去年，权威期刊《柳叶刀》曾发布一份全球饮食领域的大规模重磅研究，将195个国家和地区的饮食结构作出了分析，并指出各种不同饮食造成的死亡率和疾病负担。其中，中国因为饮食结构而导致的死亡率和疾病发生率相当高，在2017年的统计中，中国因为饮食结构问题造成的心血管疾病死亡率、癌症死亡率都是世界人口前20的大国中的第一名，甚至比大家一贯印象中高糖高脂的美国都高了许多。
+                    </view>
+                    <view class="weui-article__p">
+                        饮食结构问题造成的主要疾病有这三种，都是发病率非常高的疾病：心血管疾病、肿瘤和II型糖尿病。而在导致死亡的饮食因素中，前三位分别是高钠、低杂粮和低水果。
+                    </view>
+                    <view class="weui-article__p">
+                        <image class="weui-article__img" src="../images/img_a7_1.jpg" mode="aspectFit" style="height: 180px" />
+                    </view>                   
+                </view>
+                <view class="weui-article__section">
+                    <view class="weui-article__h3">减少食物中的盐</view>
+                    <view class="weui-article__p">
+                        我们饮食中的钠摄入，大部分来自食用盐。所以，有意识地避开腌制品、卤味、咸菜、腐乳等过咸的食物，做饭少放盐，就能大大降低钠的摄入。最新的中国居民膳食指南中，推荐每日摄入的盐应少于6克，而《柳叶刀》的要求更严格，认为最佳标准在3克左右。
+                    </view>
+                    <view class="weui-article__p">
+                        虽然关注健康饮食者往往对盐有概念，然而，普通老百姓对高盐食物和高盐调味品的认知普遍不足，大家仍然追求口味、口感，生活与工作的压力也使人常常渴望“重口味”，加上外食、外卖、零食等普遍高盐，整体的盐摄入量始终不低。
+                    </view>
+                    <view class="weui-article__p">
+                        <image class="weui-article__img" src="../images/img_a7_2.jpg" mode="aspectFit" style="height: 180px" />
+                    </view>
+                    <view class="weui-article__p">
+                        超市采购时，建议大家养成看成分表的习惯，留意下食品的配料表和营养成分表，特别是钠含量。食品营养成分表都会标注出食品的钠含量，同等情况下尽量选择钠含量低的食物。很多朋友会认为甜点不会含盐，但其实很多生产者为了让点心的口味更佳，都会加入盐，不可忽视。
+                    </view>
+                    <view class="weui-article__p">
+                        平时在家做饭的朋友，不妨在家中备个盐勺。一般市面上的盐勺，一勺就是2克，每人每天不超过6g，就是不超过3勺盐。根据家中的人数和每餐做菜的个数，就可以估算出每个菜中放盐的量应该如何控制。同时，酱油、味精、味噌、蚝油等调料中也含盐或钠，如果放了这些调料，也要相应地减少用盐量，以免钠量过高。
+                    </view>                   
+                </view>
+                <view class="weui-article__section">
+                    <view class="weui-article__h3">增加水果摄入</view>
+                    <view class="weui-article__p">
+                        一般来说，水果的推荐量是每日250克左右。国人水果摄入量少一定程度上与过去传统的饮食文化有关，典型的中国传统膳食中水果并不是主角，很多人还因害怕生冷而不吃或少吃水果。 每日250g水果并不多，对于成人来说，大概每天一个苹果搭配一个橙子或者香蕉，或者一串葡萄加上一个雪梨，也就足够一天的量了。对于许多喜欢水果的女性来说，这些根本不在话下。
+                    </view>
+                    <view class="weui-article__p">
+                        为了营养素均衡，水果也要吃够“彩虹色”，颜色越多，摄入的营养成分越丰富。红色的草莓、樱桃、西红柿，橙黄色的橙子、橘子、柠檬，绿色的奇异果、甜瓜、以及蓝紫色的葡萄、蓝莓等，互相搭配，每天最好选择两种颜色的水果，每周轮换。
+                    </view>
+                    <view class="weui-article__p">
+                        <image class="weui-article__img" src="../images/img_a7_3.jpg" mode="aspectFit" style="height: 180px" />
+                    </view>
+                    <view class="weui-article__p">
+                        选择水果时，首选当地、当季的水果，生长过程中化学品的参与更少，也更符合人体在不同节令的需求。水果应在饭前吃，晚上尽量少吃水果。特殊人群对水果的选择也有不同，比如糖尿病患者首选番石榴、柚子、蓝莓等含糖量较低、升糖指数较低的水果，肥胖者少吃榴莲等高热量水果。
+                    </view>
+                </view>
+                <view class="weui-article__section">
+                    <view class="weui-article__h3">用杂粮替代精米白面</view>
+                    <view class="weui-article__p">
+                        最新的中国居民膳食指南中推荐，每天应摄入全谷物及杂豆类50~150克，薯类50~100克，但对于不同年龄段的人群来说，粗粮的摄入建议也有所差异。
+                    </view>
+                    <view class="weui-article__p">
+                        <image class="weui-article__img" src="../images/img_a7_4.jpg" mode="aspectFit" style="height: 180px" />
+                    </view>
+                    <view class="weui-article__p">
+                        婴儿满6月龄之后，胃肠道等消化器官已相对发育完善，可以消化母乳之外的多样化食物，开始添加辅食。小米等较精细的粗粮更适合婴幼儿，可以和大米搭配熬成粥，或磨成粉拌在米糊中。根据孩子的消化情况，逐步适应和增加。
+                    </view>
+                    <view class="weui-article__p">
+                        儿童的咀嚼和消化能力已基本成熟，但仍无法与成人相比。粗粮可以加工成较易消化吸收的形式，比如打碎成五谷豆浆，压土豆泥、山药泥、紫薯泥，熬杂粮粥，或将杂粮粉与面粉混合做成面点，比如花卷、面包等。这样，能更好地促进孩子对粗粮营养的吸收。粗粮的量也不需太多，每天35克左右即可。
+                    </view>
+                    <view class="weui-article__p">
+                        青少年时期正是身体快速成长的阶段，许多重要的器官和组织都在积极发育，这时人体对于钙、铁、锌等矿物质的需求量较高。各种粗粮含有比精加工谷物更高的微量元素，如杂豆类含铁高，谷类胚芽、麦麸等富含锌，日常膳食中应有粗粮搭配，每天100g左右。
+                    </view>
+                    <view class="weui-article__p">
+                        青壮年营养均衡、健康饮食，是预防各种慢性疾病的重要途径。长期摄入升糖指数高的精米白面，会增加患上糖尿病的风险，长期缺乏纤维素的饮食也会增加肠癌的风险。同时，粗粮的摄入也对保持体形，避免肥胖有帮助。从微量元素的角度考虑，豆类、麦类、米类、薯类都应摄入，可以每周做些调换，保持多样性。
+                    </view>
+                    <view class="weui-article__p">
+                        人到中年，有些慢性疾病开始出现，比如高脂血症、糖尿病、高血压等，更需要用粗粮替代精米白面，降低饮食的升糖指数，保护胰腺的功能，以及整体的健康。粗粮中含有的多种微量元素也对各类慢性疾病有预防作用。不过，粗粮中嘌呤含量较多，属于中等嘌呤食物，对于高尿酸者或痛风患者，吃粗粮的量也不宜过高。
+                    </view>
+                    <view class="weui-article__p">
+                        老年人群身体机能开始减退，消化能力也有所减弱，在吃粗粮时要注重吸收率，以打碎成五谷豆浆，压土豆泥、山药泥、紫薯泥，熬杂粮粥等方式为主。
+                    </view>
+                </view>            
+            </view>
+    </view>
+</view>
+
+
+

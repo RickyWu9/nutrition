@@ -1,5 +1,4 @@
 <!--miniprogram/pages/articles/article3/article3.wxml-->
-<!--miniprogram/pages/articles/article2/article2.wxml-->
 <view class="page" data-weui-theme="{{theme}}">
     <view class="page__hd">
         <view class="page__title">减脂饮食示例</view>
