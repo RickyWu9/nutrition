@@ -76,10 +76,14 @@
   border-top: 1rpx solid rgb(255, 255, 255);
 }
 
+.ellipsis{
+  overflow:hidden;/* 超出一行文字自动隐藏  */
+  text-overflow:ellipsis;/* 文字隐藏后添加省略号 */
+}
+
 .diet{
   text-align: center;
 }
-
 .dietItem {
   width: 80%;
 }

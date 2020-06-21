@@ -14,7 +14,7 @@
 						<image class="weui-media-box__thumb" src="{{item.titleImg}}" alt></image>
 					</view>
 				
-					<view class="weui-media-box__bd">
+					<view class="weui-media-box__bd ellipsis">
 						<h4 class="weui-media-box__title">{{item.title}}</h4>
 						<view class="weui-media-box__desc">{{item.brief}}</view>
 					</view>
