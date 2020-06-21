@@ -1,5 +1,9 @@
 /* pages/details/details.wxss */
-.page{background-color:rgb(249, 250, 223)}
+.page{
+  background-color:rgb(249, 250, 223);
+  padding: 0 0;
+  margin: 0 0;
+}
 
 /* 求好心人实现一下my和detail粗糙界面的优化o(╥﹏╥)o */
 
@@ -10,12 +14,38 @@
   /* word-wrap: break-word; */  
 }
 
-.container{
+.revisable_box{
+  padding-left: 6%;
+  padding-right: 10%;
+  padding-bottom: 0;
+  padding-top: 4%;
+}
+
+.fix_box{
+  padding: 0 0;
+  margin: 0 0;
   position: relative;
 }
 
+.container{
+  /*padding左右需要相差36rpx*/
+  padding-left:  20rpx;
+  padding-right:  56rpx;
+  margin: 0 0;
+  position: relative;
+}
+
+.section{
+  padding: 0 0;
+  margin: 0 0;
+  position:relative;
+}
+
 .content_title{
-  padding-left: 12rpx;
+  margin: 0rpx 0rpx;
+  margin-left: 36rpx;
+  padding: 0 0;
+  margin-bottom: 20rpx;
   padding-top: 5rpx;
   padding-bottom: 5rpx;
   background-color: rgb(255, 244, 161);
@@ -26,7 +56,8 @@
 .content{
   padding-left: 2%;
   padding-right: 2%;
-  width:96%;
+  width:100%;
+  margin: 0 0 ;
   background-color: rgb(231, 222, 148);
   border: 5rpx solid rgb(76, 79, 20);
 }
@@ -54,6 +85,7 @@
 .note_size{
   width: 100%;
   height: 210rpx;
+  margin-left: 6rpx;
   padding: 0rpx 8rpx;
   padding-bottom: 8rpx;
   border: 3rpx solid rgb(219, 223, 141);

@@ -1,6 +1,6 @@
 <!--pages/details/details.wxml-->
 <view class="page" data-weui-theme="{{theme}}">
-    <view class="page__hd">
+    <view class="page__hd revisable_box">
         <view class="page__title wrap">
             <!-- <input wx:if="{{title_modify}}" class="title_size" auto-focus placeholder="标题不能为空哦" placeholder-class="title-holder" 
             bindblur="titleModifyEnd" data-name="diet.title" data-state="title_modify" data-empty="{{false}}" value="{{diet.title}}"/> -->
@@ -15,9 +15,9 @@
             <scroll-view wx:else class="note_size" scroll-y="{{true}}" bindtap="modifyStart" data-state="note_modify">{{diet.note?diet.note:"无"}}</scroll-view>
         </view>
     </view>
-    <view class="page__bd">
-        <view class="weui-article">
-                <view class="weui-article__section container">
+    <view class="page__bd fixed_box">
+        <view class="weui-article container">
+                <view class="weui-article__section section">
                     <view class="weui-article__h3 wrap content_title">
                         <text decode="{{true}}" space="nbsp">具体方案 (卡路里: {{diet.calorie}})</text>
                     </view>
