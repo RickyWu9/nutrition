@@ -470,12 +470,18 @@ Page({
 
     console.log(array);
 
+    var my_context = "";
+    var food = this.data.cart;
+    for(let i=0;i<food.length;i++){
+      my_context += (food[i]["name"]+"x"+food[i]["buyCount"]+";")
+    }
+    console.log("my_context",my_context)
     //数据格式如下diet所示，均为字符串类型，其中title为主键，title重复时会插入失败
     //detail详情页中context的显示方式为<text decode="{{true}}" space="nbsp">{{diet.context}}</text>
     let newDiet = {
-      title:"123饮食方案名称_add1",//主键
+      title:"添加的饮食方案名称",//主键
       calorie:this.data.sumMoney+"千卡",//需要自带单位
-      context:"内容_add1",//由选定食物组成，仅在detail页面显示
+      context:my_context,//由选定食物组成，仅在detail页面显示
       note:""//为食谱的备注，该功能不实现时note需要取""或undefined(此时detail页面备注为"无")，仅在detail页面显示
     };
 
