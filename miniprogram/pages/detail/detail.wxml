@@ -15,9 +15,9 @@
     </view>
     <view class="page__bd">
         <view class="weui-article">
-                <view class="weui-article__section">
-                    <view class="weui-article__h3">具体方案(卡路里:{{diet.calorie}})</view>
-                    <view class="weui-article__p wrap">
+                <view class="weui-article__section container">
+                    <view class="weui-article__h3 wrap title">具体方案(卡路里:{{diet.calorie}})</view>
+                    <view class="weui-article__p wrap content">
                         <text decode="{{true}}" space="nbsp">{{diet.context}}</text>
                     </view>
                 </view>

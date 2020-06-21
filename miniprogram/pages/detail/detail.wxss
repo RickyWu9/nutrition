@@ -1,12 +1,30 @@
 /* pages/details/details.wxss */
-.page{background-color:var(--weui-BG-2)}image{margin:4px 0}
+.page{background-color:rgb(249, 250, 223)}
 
 /* 求好心人实现一下my和detail粗糙界面的优化o(╥﹏╥)o */
 
 /* 目前仍不知道如何使连续符号换行 */
 .wrap{
   white-space:pre-line;
-  width:100%;
   word-break:break-all; /* word-break比word-wrap更强力 */
   /* word-wrap: break-word; */  
+}
+
+.container{
+  position: relative;
+}
+
+.title{
+  padding-left: 12rpx;
+  padding-top: 5rpx;
+  padding-bottom: 5rpx;
+  background-color: rgb(255, 244, 161);
+  border-radius: 20rpx;
+}
+
+.content{
+  padding-left: 12.5%;
+  padding-right: 12.5%;
+  width:75%;
+  background-color: rgb(231, 222, 148);
 }
