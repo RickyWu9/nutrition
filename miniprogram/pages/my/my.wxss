@@ -122,8 +122,8 @@
 }
 
 button:not([type]) {
-  color: rgb(123, 101, 22);
-  background-color: rgb(245, 242, 190);
+  color: rgb(147, 145, 141);
+  background-color: rgb(252, 251, 224);
 }
 
 button::after {

@@ -9,8 +9,8 @@
             <scroll-view wx:else class="title_size" scroll-x="{{true}}" bindtap="modifyStart" data-state="title_modify">{{diet.title}}</scroll-view>
         </view>
         <view class="page__desc wrap">
-            <text>备注：（最多140字）</text>
-            <textarea wx:if="{{note_modify}}" class="note_size" auto-focus placeholder="在这里输入备注" placeholder-class="place-holder" 
+            <text>备注（最多140字）：</text>
+            <textarea wx:if="{{note_modify}}" class="note_size" auto-focus placeholder="在这里输入备注" placeholder-class="note-holder" 
             bindblur="modifyEnd" data-name="diet.note" data-state="note_modify" data-empty="{{true}}" value="{{diet.note}}"/>
             <scroll-view wx:else class="note_size" scroll-y="{{true}}" bindtap="modifyStart" data-state="note_modify">{{diet.note?diet.note:"无"}}</scroll-view>
         </view>
