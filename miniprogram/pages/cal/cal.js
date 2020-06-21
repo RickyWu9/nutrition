@@ -20,7 +20,9 @@ Page({
 
     sumMoney: 0.00, //购买总价
 
-    buySum: 0//购买总数
+    buySum: 0,//购买总数
+
+    dietname:''
 
   },
 
@@ -430,12 +432,14 @@ Page({
     
     
   },
+  //展示弹窗
   onView: function(e){
     this.setData({
       showView:true
     })
    
   },
+  //取消弹窗
   offView:function(e){
     this.setData({
       showView:false
@@ -443,7 +447,16 @@ Page({
   },
 
 
-  submit: function (array) { 
+  submit: function (array) {
+    console.log(this.data.dietname)
+    if(this.data.dietname==''){
+      wx.showToast({
+        title: "请输入食谱名字",//最多七个汉字长度
+        icon: "none",
+        duration: 2000
+      });
+      return
+    }
     if(this.data.cart.length<=0){
       wx.showToast({
         title: "你还没选呢",//最多七个汉字长度
@@ -465,7 +478,7 @@ Page({
     //数据格式如下diet所示，均为字符串类型，其中title为主键，title重复时会插入失败
     //detail详情页中context的显示方式为<text decode="{{true}}" space="nbsp">{{diet.context}}</text>
     let newDiet = {
-      title:"41512315",//主键//getname
+      title:this.data.dietname,//主键//getname
       calorie:this.data.sumMoney+"千卡",//需要自带单位
       context:my_context,//由选定食物组成，仅在detail页面显示
       note:""//为食谱的备注，该功能不实现时note需要取""或undefined(此时detail页面备注为"无")，仅在detail页面显示
@@ -479,14 +492,26 @@ Page({
         icon: "none",
         duration: 2000
       });
+      
     }else{
       wx.showToast({
         title: "添加成功",//最多七个汉字长度
         icon: "none",
         duration: 2000
       });
+      this.setData({
+        showView:false
+      })
       this.clear()
     }
+  },
+
+  //设置食谱名字
+  dietname:function(e){
+    this.setData({
+      dietname:e.detail.value
+    })    
+
   },
 
 

@@ -89,9 +89,9 @@
 
 <view class="bg" hidden="{{!showView}}" >
 	<view class="container">
-			<view class="title">请输入你的食谱名字</view>
+			<view class="title">请输入您的食谱名字</view>
 			<view class="input">
-				<input class="dietname" password type="text" placeholder="新的食谱" />
+				<input class="dietname"  type="text" placeholder="新的食谱" bindinput="dietname"/>
 			</view>
 			<view class="footer">
 				<button class="cancel" bindtap="offView">取消</button>
