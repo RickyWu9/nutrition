@@ -477,7 +477,7 @@ Page({
     for(let i=0;i<food.length;i++){
       my_context += (food[i]["name"]+"x"+food[i]["buyCount"]+";")
     }
-    console.log("my_context",my_context)
+    console.log("[cal.js] my_context",my_context);
 
     //数据格式如下diet所示，均为字符串类型，其中title为主键，title重复时会插入失败
     //detail详情页中context的显示方式为<text decode="{{true}}" space="nbsp">{{diet.context}}</text>
