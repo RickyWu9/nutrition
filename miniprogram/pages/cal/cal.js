@@ -432,44 +432,6 @@ Page({
 
 
   submit: function (array) {
-    if(this.data.cart.length<=0){
-      return
-    }
-    //组装下参数
-    console.log(this.data.cart);
-    console.log(this.data.sumMoney);   
-    const db = wx.cloud.database();
-    
-    db.collection('userDietList').add({
-      data: {
-        dietList:this.data.cart,
-        calorySum:this.data.sumMoney,
-      },
-      success: res => {
-        // 在返回结果中会包含新创建的记录的 _id
-        this.setData({
-          dietList:this.data.cart,
-          calorySum:this.data.sumMoney,
-        })
-        wx.showToast({
-          title: '新增记录成功',
-        })
-        console.log('[数据库] [新增记录] 成功，记录 _id: ', res._id)
-      },
-      fail: err => {
-        wx.showToast({
-          icon: 'none',
-          title: '新增记录失败'
-        })
-        console.error('[数据库] [新增记录] 失败：', err)
-      }
-    })
-
-    console.log(array);
-
-
-
-
 
     //组装饮食方案的内容
     var my_context = "";
