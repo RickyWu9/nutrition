@@ -22,7 +22,9 @@ Page({
 
     buySum: 0,//购买总数
 
-    dietname:''
+    dietname:'',
+
+    dietnote:''
 
   },
 
@@ -448,7 +450,6 @@ Page({
 
 
   submit: function (array) {
-    console.log(this.data.dietname)
     if(this.data.dietname==''){
       wx.showToast({
         title: "请输入食谱名字",//最多七个汉字长度
@@ -459,7 +460,7 @@ Page({
     }
     if(this.data.cart.length<=0){
       wx.showToast({
-        title: "你还没选呢",//最多七个汉字长度
+        title: "还没选饮食内容",//最多七个汉字长度
         icon: "none",
         duration: 2000
       });
@@ -481,11 +482,10 @@ Page({
       title:this.data.dietname,//主键//getname
       calorie:this.data.sumMoney+"千卡",//需要自带单位
       context:my_context,//由选定食物组成，仅在detail页面显示
-      note:""//为食谱的备注，该功能不实现时note需要取""或undefined(此时detail页面备注为"无")，仅在detail页面显示
+      note:this.data.dietnote//为食谱的备注，该功能不实现时note需要取""或undefined(此时detail页面备注为"无")，仅在detail页面显示
     };
     //添加diet功能实现如下所示
     let app = getApp(); 
-    console.log("添加饮食方案:",newDiet);
     if(!app.add_diet(newDiet)){
       wx.showToast({
         title: "标题已存在哦",//最多七个汉字长度
@@ -494,15 +494,18 @@ Page({
       });
       
     }else{
+      // 理论上有可能添加失败，但此处当做title不重复就可添加成功
       wx.showToast({
         title: "添加成功",//最多七个汉字长度
         icon: "none",
         duration: 2000
       });
       this.setData({
-        showView:false
-      })
-      this.clear()
+        showView:false,
+        dietname:'',
+        dietnote:''
+      });
+      this.clear();
     }
   },
 
@@ -511,7 +514,13 @@ Page({
     this.setData({
       dietname:e.detail.value
     })    
+  },
 
+  //设置食谱备注
+  dietnote:function(e){
+    this.setData({
+      dietnote:e.detail.value
+    })    
   },
 
 

@@ -110,7 +110,8 @@ Page({
             },
             fail: err => {
               console.log("[detail.js] modifyEnd更新云数据库失败:",err);
-              that.settingData(dataset.name,oldValue);//若发生更新错误再改回来
+              app.updateWithCloudDietList(this.updateDetail);//未知在更新过程中发生什么错误，故重读
+              // that.settingData(dataset.name,oldValue);//若发生更新错误再改回来
             }
           })
         },
@@ -143,14 +144,12 @@ Page({
           },
           success: res => {
             console.log("[detail.js] titleModifyEnd更新云数据库成功:",res);
-            app.updateWithCloudDietList();
           },
           fail: err => {
             console.log("[detail.js] titleModifyEnd更新云数据库失败:",err);
-
-            //若发生更新错误再改回来
-            this.settingData(dataset.name,old_title);
-            app.globalData.updateDiet;
+            this.settingData(dataset.name,old_title);//若发生更新错误再把当前界面数值改回来
+            // app.globalData.updateDiet;//下面的方法包含此条功能，故注释
+            app.updateWithCloudDietList();//未知在更新过程中发生什么错误，故重读
           }
         })
       }else if(value!=this.data.diet.title){

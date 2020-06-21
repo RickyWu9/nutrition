@@ -137,6 +137,9 @@ App({
       console.log("insert failed for duplicate title");
       return false;
     }
+    var list = this.globalData.dietList;
+    list.push(newDiet);
+    this.globalData.updateDiet;
     const db = wx.cloud.database();
     var that = this;
     db.collection('dietList').add({
@@ -145,10 +148,13 @@ App({
       success: function(res) {
         // res 是一个对象，其中有 _id 字段标记刚创建的记录的 id
         console.log("插入云数据库成功:",res);
-        that.updateWithCloudDietList();
+        // that.updateWithCloudDietList();//放弃采用重新读取dietList的方法更新，而是分别更新本地与云端，云端出错则再次恢复本地
       },
       fail: function(err){
         console.log("插入云数据库失败:",err);
+        // list.pop();
+        // that.globalData.updateDiet;
+        that.updateWithCloudDietList();//未知在插入过程中发生什么错误，故重读
       },
       // complete: console.log
     })

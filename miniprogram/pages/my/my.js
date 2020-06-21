@@ -95,7 +95,8 @@ Page({
   deleteDiet:function(event){
     var index = event.currentTarget.dataset.index;
     var list = this.data.dietList;
-    var my_title = list[index]["title"];
+    var to_delete = list[index];
+    var my_title = to_delete["title"];
     console.log("删除饮食方案:",my_title);
     list.splice(index,1);
     this.setData({
@@ -114,11 +115,14 @@ Page({
         var id = res.data[0]._id;
         db.collection('dietList').doc(id).remove({
           success: res => {
-            app.updateWithCloudDietList();
+            // app.updateWithCloudDietList();//此处重新读取dietList其实没有必要
             console.log("[my.js] deleteDiet删除云数据库数据成功:",res)
           },
           fail: err => {
             console.log("[my.js] deleteDiet删除云数据库数据失败:",err);
+            // list.splice(index,0,to_delete);
+            // this.setData({dietList:list});
+            app.updateWithCloudDietList();//未知在删除过程中发生什么错误，故重读
           },
           complete: () => {
             // wx.hideLoading();
@@ -127,6 +131,10 @@ Page({
       },
       fail: err => {
         console.log("[my.js] deleteDiet获取删除对象id失败:",err);
+        list.splice(index,0,to_delete);
+        this.setData({
+          dietList:list
+        });
       }
     })
     

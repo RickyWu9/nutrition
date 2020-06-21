@@ -413,16 +413,17 @@ page {
 }
 
 .title{
-	width: 100%;	
-  padding: 20rpx;
-  text-align: center;
+	width: 25%;	
+	padding: 20rpx;
+	padding-top: 15rpx;
+  text-align: right;
   font-size: 40rpx;
   
 }
 
 .input{
-	margin: 60rpx 10rpx;
-  text-align: center;
+	width: 75%;
+	padding: 20rpx;
 }
 
 .footer{
@@ -449,4 +450,12 @@ page {
   transform: translate(-50%, -50%); 
   overflow: hidden;
   background: #fff;
+}
+.bar{
+	position: relative;
+	margin-top: 5%;
+	margin-bottom: 4%;
+	display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
 }

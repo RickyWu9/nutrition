@@ -89,9 +89,17 @@
 
 <view class="bg" hidden="{{!showView}}" >
 	<view class="container">
-			<view class="title">请输入您的食谱名字</view>
-			<view class="input">
-				<input class="dietname"  type="text" placeholder="新的食谱" bindinput="dietname"/>
+	    <view class="bar">
+			    <view class="title">食谱名:</view>
+			    <view class="input">
+				      <input class="dietname"  type="text" placeholder="新的食谱" bindinput="dietname" value="{{dietname}}"/>
+			    </view>
+			</view>
+			<view class="bar">
+			    <view class="title"><text decode="{{true}}" space="nbsp">备   注:</text></view>
+			    <view class="input">
+				     <input class="dietnote"  type="text" placeholder="备注可为空" bindinput="dietnote" value="{{dietnote}}"/>
+			    </view>
 			</view>
 			<view class="footer">
 				<button class="cancel" bindtap="offView">取消</button>

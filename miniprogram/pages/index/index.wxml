@@ -16,6 +16,7 @@
 				
 					<view class="weui-media-box__bd ellipsis">
 						<h4 class="weui-media-box__title">{{item.title}}</h4>
+						<!--看来weui-media-box__desc会覆盖ellipsis，所以不用担心item.brief也变成一行就省略-->
 						<view class="weui-media-box__desc">{{item.brief}}</view>
 					</view>
 				</a>
