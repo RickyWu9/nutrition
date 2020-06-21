@@ -131,6 +131,31 @@ App({
     })
   },
 
+  //添加饮食方案，返回title是否重复，有可能其他原因添加失败
+  add_diet:function(newDiet){
+    console.log("添加饮食方案:",newDiet);
+    if(!this.uniq_diet(newDiet.title)){
+      console.log("insert failed for duplicate title");
+      return false;
+    }
+    const db = wx.cloud.database();
+    var that = this;
+    db.collection('dietList').add({
+      // data 字段表示需新增的 JSON 数据
+      data: newDiet,
+      success: function(res) {
+        // res 是一个对象，其中有 _id 字段标记刚创建的记录的 id
+        console.log("插入云数据库成功:",res);
+        that.updateWithCloudDietList();
+      },
+      fail: function(err){
+        console.log("插入云数据库失败:",err);
+      },
+      // complete: console.log
+    })
+    return true;
+  },
+
   //勿改，此方法在detail.js中被调用
   uniq_diet:function(title){
     var list = this.globalData.dietList;
