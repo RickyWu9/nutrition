@@ -115,7 +115,7 @@ Page({
           })
         },
         fail: err => {
-          console.log("error",err);
+          console.log("[detail.js] modifyEnd获取修改对象id失败:",err);
         }
       })
     }
