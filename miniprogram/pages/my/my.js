@@ -94,12 +94,16 @@ Page({
   //利用globalData中dietList的引用，按index删除饮食方案列表中的一项
   deleteDiet:function(event){
     var index = event.currentTarget.dataset.index;
-    var my_title = this.data.dietList[index]["title"];
+    var list = this.data.dietList;
+    var my_title = list[index]["title"];
     console.log("删除饮食方案:",my_title);
-
-    wx.showLoading({
-      title: '更新dietList中',
+    list.splice(index,1);
+    this.setData({
+      dietList:list
     });
+    // wx.showLoading({
+    //   title: '更新dietList中',
+    // });
 
     db.collection('dietList').where({
       _openid: '{openid}',
@@ -117,12 +121,12 @@ Page({
             console.log("[my.js] deleteDiet删除云数据库数据失败:",err);
           },
           complete: () => {
-            wx.hideLoading();
+            // wx.hideLoading();
           }
         })
       },
       fail: err => {
-        console.log("error",err);
+        console.log("[my.js] deleteDiet获取删除对象id失败:",err);
       }
     })
     
