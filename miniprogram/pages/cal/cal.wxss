@@ -291,6 +291,7 @@ page {
 
 }
 
+
 .cart .showCartDetail {
 
 	-webkit-flex: 1;
@@ -399,4 +400,53 @@ page {
   text-align: center;
 	background-color:rgb(255, 230, 184);
 	border-radius: 98rpx;
+}
+
+.bg{
+	position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+	background: rgba(0, 0, 0, .5);
+	z-index: 10;
+}
+
+.title{
+	width: 100%;	
+  padding: 20rpx;
+  text-align: center;
+  font-size: 40rpx;
+  
+}
+
+.input{
+	margin: 60rpx 10rpx;
+  text-align: center;
+}
+
+.footer{
+	display: flex;
+  justify-content: space-around;
+  margin-bottom: 40rpx;
+}
+.footer button{
+	
+  align-items: center;  
+  width: 50%;
+  
+}
+.container{
+	position: absolute;
+  left: 50%;
+  top: 50%; 
+	width: 80%;
+	height: 35%;
+  max-width: 600rpx;
+  border: 2rpx solid #ccc;
+  border-radius: 10rpx;
+  box-sizing: bordre-box;
+  transform: translate(-50%, -50%); 
+  overflow: hidden;
+  background: #fff;
 }

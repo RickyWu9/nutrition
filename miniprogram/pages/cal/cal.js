@@ -4,6 +4,7 @@ var shopList = require('./shopList.js');
 Page({
 
   data: {
+    showView:false,
 
     showCartDetail: false,
 
@@ -428,6 +429,17 @@ Page({
     this.setData(data);
     
     
+  },
+  onView: function(e){
+    this.setData({
+      showView:true
+    })
+   
+  },
+  offView:function(e){
+    this.setData({
+      showView:false
+    })
   },
 
 

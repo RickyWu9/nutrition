@@ -87,15 +87,25 @@
 
 </view>
 
+<view class="bg" hidden="{{!showView}}" >
+	<view class="container">
+			<view class="title">请输入你的食谱名字</view>
+			<view class="input">
+				<input class="dietname" password type="text" placeholder="新的食谱" />
+			</view>
+			<view class="footer">
+				<button class="cancel" bindtap="offView">取消</button>
+				<button class="confirm" bindtap="submit">确认</button>
+			</view>
+	</view>
+</view>
  
 
-<view class="cart">
-
-		
+<view class="cart">	
 
 			<view class="sumMoney" bindtap="showCartDetail">
 			<text space="nbsp">总计:{{sumMoney}}\n单位：千卡  </text></view>
 			<button class="clearCart" bindtap="clear"> 清空</button>
-			<button class='submit' bindtap='submit'>添加食谱</button>
+			<button class='submit' bindtap="onView">添加食谱</button>
 
 	</view>
