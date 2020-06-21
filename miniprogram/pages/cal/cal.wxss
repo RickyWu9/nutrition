@@ -332,7 +332,7 @@ page {
 	font-size: 35rpx;
 	width: 30%;
 	text-align: center;
-	background-color:#FDF5E6;
+	background-color:rgb(255, 230, 184);
 	border-radius: 98rpx;
 
 }

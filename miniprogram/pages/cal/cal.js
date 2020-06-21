@@ -431,34 +431,40 @@ Page({
   },
 
 
-  submit: function (array) {
-
+  submit: function (array) { 
+    console.log(array);
     //组装饮食方案的内容
     var my_context = "";
     var food = this.data.cart;
     for(let i=0;i<food.length;i++){
       my_context += (food[i]["name"]+"x"+food[i]["buyCount"]+";")
     }
-    console.log("[cal.js] my_context",my_context);
-
+    console.log("my_context",my_context)
+    //class='name'
     //数据格式如下diet所示，均为字符串类型，其中title为主键，title重复时会插入失败
     //detail详情页中context的显示方式为<text decode="{{true}}" space="nbsp">{{diet.context}}</text>
     let newDiet = {
-      title:"添加的饮食方案名称",//主键
+      title:"41512315",//主键//getname
       calorie:this.data.sumMoney+"千卡",//需要自带单位
       context:my_context,//由选定食物组成，仅在detail页面显示
       note:""//为食谱的备注，该功能不实现时note需要取""或undefined(此时detail页面备注为"无")，仅在detail页面显示
     };
-
     //添加diet功能实现如下所示
     let app = getApp(); 
-    console.log("[cal.js] 添加饮食方案:",newDiet);
+    console.log("添加饮食方案:",newDiet);
     if(!app.add_diet(newDiet)){
       wx.showToast({
         title: "标题已存在哦",//最多七个汉字长度
         icon: "none",
         duration: 2000
       });
+    }else{
+      wx.showToast({
+        title: "添加成功",//最多七个汉字长度
+        icon: "none",
+        duration: 2000
+      });
+      this.clear()
     }
   },
 
