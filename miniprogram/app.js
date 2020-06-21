@@ -41,10 +41,12 @@ App({
     // })
   },
 
+  //在云数据库发生变化时，重新读取dietList，并更新相应页面
   updateWithCloudDietList:function(method){
     this.getDietList(this.updateMethod(method));
   },
 
+  // 多一个method参数，除了更新默认的页面之外，可以临时调用某个页面的方法来完成更新
   updateMethod:function(method){
     var that = this;
     return function(){

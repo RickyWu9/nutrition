@@ -132,6 +132,7 @@ Page({
       if(app.uniq_diet(value)){
         var old_title = this.data.diet.title;
         this.settingData(dataset.name,value);
+        app.globalData.updateDiet;
 
         //利用云函数在服务端更新云数据库
         wx.cloud.callFunction({
@@ -146,7 +147,10 @@ Page({
           },
           fail: err => {
             console.log("[detail.js] titleModifyEnd更新云数据库失败:",err);
-            this.settingData(dataset.name,old_title);//若发生更新错误再改回来
+
+            //若发生更新错误再改回来
+            this.settingData(dataset.name,old_title);
+            app.globalData.updateDiet;
           }
         })
       }else if(value!=this.data.diet.title){

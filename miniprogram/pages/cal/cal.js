@@ -432,7 +432,16 @@ Page({
 
 
   submit: function (array) { 
+    if(this.data.cart.length<=0){
+      wx.showToast({
+        title: "你还没选呢",//最多七个汉字长度
+        icon: "none",
+        duration: 2000
+      });
+      return;
+    }
     console.log(array);
+
     //组装饮食方案的内容
     var my_context = "";
     var food = this.data.cart;
