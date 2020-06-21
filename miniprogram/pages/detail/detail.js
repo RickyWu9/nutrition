@@ -1,6 +1,6 @@
 // pages/details/details.js
 var app = getApp();
-const db = 
+const db = wx.cloud.database();
 
 //功能大体都全，求好心人实现一下my和detail粗糙界面的优化o(╥﹏╥)o
 Page({
@@ -14,7 +14,34 @@ Page({
     note_modify:false
   },
 
-  //未经过充分测试，不确定是否完全正确，至少目前可用
+  // 注意该方法是根据原title搜索globalData中的title来更新的
+  // 故而更新title时不能调用此方法
+  updateDetail(){
+    console.log("updateDetail");
+    var myDiet = this.data.diet;
+    var dietList = app.globalData.dietList;
+    for(let i=0;i<dietList.length;i++){
+      if(dietList[i].title==myDiet.title){
+        myDiet = dietList[i];
+        break;
+      }
+    }
+    this.setData({diet:myDiet});
+  },
+
+  //解析name，返回this.data中的相应值
+  getProperty:function(name){
+    if(!name.indexOf('.')){
+      return this.data[name];
+    }
+    var nameList = name.split('.');
+    var tmpObj = this.data;
+    for(let i=0;i<nameList.length;i++){
+      tmpObj = tmpObj[nameList[i]];
+    }
+    return tmpObj;
+  },
+
   //解析name与obj中的结构，将value包装成能对obj赋值的对象返回
   //为使console简洁，evalObject不输出控制台信息
   evalObject:function(name,obj,value){
@@ -57,18 +84,37 @@ Page({
     console.log("modifyEnd");
     var dataset = event.currentTarget.dataset;
     if(event.detail.value||dataset.empty){//empty为true代表可以为空值
+      var oldValue = this.getProperty(dataset.name);
       this.settingData(dataset.name,event.detail.value);
-
-      // db.collection('todos').where({
-      //   _openid: '{openid}',
-      //   title: this.data.diet.title
-      // })
-      // .get({
-      //   success: function(res) {
-      //     // res.data 是包含以上定义的两条记录的数组
-      //     console.log(res.data)
-      //   }
-      // })
+      var that = this;
+      db.collection('dietList').where({
+        _openid: '{openid}',
+        title: that.data.diet.title
+      })
+      .get({
+        success: res => {
+          var id = res.data[0]._id;
+          console.log("待修改diet的id:",id,that.data.diet);
+          db.collection('dietList').doc(id).set({
+            data: {
+              title:that.data.diet.title,
+              calorie:that.data.diet.calorie,
+              context:that.data.diet.context,
+              note:that.data.diet.note
+            },
+            success: res => {
+              console.log("modifyEnd更新云数据库成功")
+            },
+            fail: err => {
+              console.log("error",err);
+              that.settingData(dataset.name,oldValue);
+            }
+          })
+        },
+        fail: err => {
+          console.log("error",err);
+        }
+      })
     }
     this.settingData(dataset.state,false);
   },
@@ -80,8 +126,23 @@ Page({
     var value = event.detail.value;
     if(value){
       if(app.uniq_diet(value)){
+        var old_title = this.data.diet.title;
         this.settingData(dataset.name,value);
-        app.globalData.updateDiet;
+        wx.cloud.callFunction({
+          name: 'updateDietListTitle',
+          data:{
+            oldTitle:old_title,
+            newTitle:value
+          },
+          success: res => {
+            console.log("titleModifyEnd更新云数据库成功")
+          },
+          fail: err => {
+            console.log("error",err);
+            this.settingData(dataset.name,old_title);//若发生更新错误再改回来
+          }
+        })
+        app.updateWithCloudDietList();
       }else if(value!=this.data.diet.title){
         wx.showToast({
           title: "标题已存在哦",//最多七个汉字长度
@@ -115,8 +176,8 @@ Page({
     for(let i=0;i<dietList.length;i++){
       if(dietList[i].title==title){
         myDiet = dietList[i];
+        break;
       }
-      break;
     }
     this.setData({diet:myDiet});
     console.log("打开饮食方案详情页面:",myDiet);
