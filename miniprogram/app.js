@@ -69,7 +69,6 @@ App({
       success: function(res) {
         // 计算需分几次取
         const batchTimes = Math.ceil(res.total / MAX_LIMIT);
-        console.log("batchTimes:",batchTimes);
         var read = [];
          // 异步获取所有dietList
         for (let i = 0; i < batchTimes; i++) {
@@ -79,7 +78,6 @@ App({
             success: res => {
               read.push([i,res.data]);//将读取的序号随数据一同传入
               has_loaded++;
-              console.log("success in loading",i);
               if(has_loaded==batchTimes){
                 //根据序号重新排列dietList
                 let list = [];
@@ -93,8 +91,7 @@ App({
                   }
                   list = list.concat(tmpList)
                 }
-                console.log("all loaded")
-                console.log("list",list)
+                console.log("batchTimes:",batchTimes+", all loaded, list:",list)
                 //this失效，用传入的that赋值
                 that.globalData.dietList = list;
                 if(method){

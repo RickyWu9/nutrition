@@ -490,7 +490,7 @@ Page({
 
     //添加diet功能实现如下所示
     let app = getApp(); 
-    console.log("添加饮食方案:",newDiet);
+    console.log("[cal.js] 添加饮食方案:",newDiet);
     if(!app.add_diet(newDiet)){
       wx.showToast({
         title: "标题已存在哦",//最多七个汉字长度

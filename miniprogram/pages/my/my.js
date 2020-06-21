@@ -23,11 +23,11 @@ Page({
 
   //计算bmi，根据bmi变更assess
   calBMI: function(){
-    console.log("calBMI");
+    console.log("[my.js] calBMI");
     var height = this.data.height;
     var weight = this.data.weight;
     if(height&&weight&&height>0&&weight>0){
-      console.log("calBMI passed, assess provided");
+      console.log("[my.js] calBMI passed, assess provided");
       let bmi_ = weight/(height*height);
       this.setData({
         bmi:bmi_
@@ -62,7 +62,7 @@ Page({
         });
       }
     }else{
-      console.log("calBMI failed");
+      console.log("[my.js] calBMI failed");
       this.setData({
         bmi:"现在的数据计算不出yo",
         assess:""
@@ -73,7 +73,7 @@ Page({
   //如果my.wxml中改为直接用双向绑定输入数据，则注释“失去焦点时才调用”的
   //这个inputData函数，并恢复my.wxml中bmi的计算按钮
   inputData:function(event){
-    console.log("inputData");
+    console.log("[my.js] inputData");
     var name = event.currentTarget.dataset.name;
     this.setData({
       [name]:event.detail.value
@@ -83,7 +83,7 @@ Page({
 
   // 跳转向detail页面的同时传去“标题”数据，由detail页面搜索全局数据dietList并添加相应diet引用
   goToDetail: function(event){
-    console.log("goToDetail")
+    console.log("[my.js] goToDetail")
     var diet = event.currentTarget.dataset.diet;
    
     wx.navigateTo({
@@ -97,6 +97,10 @@ Page({
     var my_title = this.data.dietList[index]["title"];
     console.log("删除饮食方案:",my_title);
 
+    wx.showLoading({
+      title: '更新dietList中',
+    });
+
     db.collection('dietList').where({
       _openid: '{openid}',
       title: my_title
@@ -104,14 +108,16 @@ Page({
     .get({
       success: res => {
         var id = res.data[0]._id;
-        console.log("待删除diet的id:",id);
         db.collection('dietList').doc(id).remove({
           success: res => {
             app.updateWithCloudDietList();
-            console.log("deleteDiet删除云数据库数据成功")
+            console.log("[my.js] deleteDiet删除云数据库数据成功:",res)
           },
           fail: err => {
-            console.log("error",err);
+            console.log("[my.js] deleteDiet删除云数据库数据失败:",err);
+          },
+          complete: () => {
+            wx.hideLoading();
           }
         })
       },
@@ -124,7 +130,7 @@ Page({
 
   //在onLoad添加监听后，得以用全局属性updateDiet的访问器来刷新my页面中的dietList列表，参见app中watchDietList方法
   updateDiet:function(){
-    console.log("updateDiet");
+    console.log("[my.js] updateDiet");
     this.setData({
       dietList:app.globalData.dietList
     });

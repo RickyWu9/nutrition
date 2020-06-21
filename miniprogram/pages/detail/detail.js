@@ -17,7 +17,7 @@ Page({
   // 注意该方法是根据原title搜索globalData中的title来更新的
   // 故而更新title时不能调用此方法
   updateDetail(){
-    console.log("updateDetail");
+    console.log("[detail.js] updateDetail");
     var myDiet = this.data.diet;
     var dietList = app.globalData.dietList;
     for(let i=0;i<dietList.length;i++){
@@ -30,6 +30,7 @@ Page({
   },
 
   //解析name，返回this.data中的相应值
+  //为使console简洁，不输出控制台信息
   getProperty:function(name){
     if(!name.indexOf('.')){
       return this.data[name];
@@ -43,7 +44,7 @@ Page({
   },
 
   //解析name与obj中的结构，将value包装成能对obj赋值的对象返回
-  //为使console简洁，evalObject不输出控制台信息
+  //为使console简洁，不输出控制台信息
   evalObject:function(name,obj,value){
     var map = {};
     if(!name.indexOf('.')){
@@ -75,18 +76,21 @@ Page({
   //为this.data中的name赋值value,同时更新my页面,该方法允许name中有多个'.'(如果evalObject没写错)
   settingData:function(name,value){
     var map = this.evalObject(name,this.data,value);
-    console.log("settingData:",map);
+    console.log("[detail.js] settingData:",map);
     this.setData(map);
   },
 
   //在失去焦点时，动态地、有条件地更新某属性，同时使组件回到非修改状态
+  //采用获取id后前端直接修改的方法（也可替换为titleModifyEnd中的云函数服务端更新的方法)
   modifyEnd:function(event){
-    console.log("modifyEnd");
+    console.log("[detail.js] modifyEnd");
     var dataset = event.currentTarget.dataset;
     if(event.detail.value||dataset.empty){//empty为true代表可以为空值
       var oldValue = this.getProperty(dataset.name);
       this.settingData(dataset.name,event.detail.value);
       var that = this;
+
+      //获取id后在前端直接更新云数据库
       db.collection('dietList').where({
         _openid: '{openid}',
         title: that.data.diet.title
@@ -94,7 +98,6 @@ Page({
       .get({
         success: res => {
           var id = res.data[0]._id;
-          console.log("待修改diet的id:",id,that.data.diet);
           db.collection('dietList').doc(id).set({
             data: {
               title:that.data.diet.title,
@@ -103,11 +106,11 @@ Page({
               note:that.data.diet.note
             },
             success: res => {
-              console.log("modifyEnd更新云数据库成功")
+              console.log("[detail.js] modifyEnd更新云数据库成功:",res)
             },
             fail: err => {
-              console.log("error",err);
-              that.settingData(dataset.name,oldValue);
+              console.log("[detail.js] modifyEnd更新云数据库失败:",err);
+              that.settingData(dataset.name,oldValue);//若发生更新错误再改回来
             }
           })
         },
@@ -120,14 +123,17 @@ Page({
   },
 
   //因为title不能重复，所以更改标题的方法需要另写
+  //采用云函数服务端更新的方法（可替换为modifyEnd中获取id后前端直接修改的方法)
   titleModifyEnd:function(event){
-    console.log("titleModifyEnd");
+    console.log("[detail.js] titleModifyEnd");
     var dataset = event.currentTarget.dataset;
     var value = event.detail.value;
     if(value){
       if(app.uniq_diet(value)){
         var old_title = this.data.diet.title;
         this.settingData(dataset.name,value);
+
+        //利用云函数在服务端更新云数据库
         wx.cloud.callFunction({
           name: 'updateDietListTitle',
           data:{
@@ -135,14 +141,14 @@ Page({
             newTitle:value
           },
           success: res => {
-            console.log("titleModifyEnd更新云数据库成功")
+            console.log("[detail.js] titleModifyEnd更新云数据库成功:",res);
+            app.updateWithCloudDietList();
           },
           fail: err => {
-            console.log("error",err);
+            console.log("[detail.js] titleModifyEnd更新云数据库失败:",err);
             this.settingData(dataset.name,old_title);//若发生更新错误再改回来
           }
         })
-        app.updateWithCloudDietList();
       }else if(value!=this.data.diet.title){
         wx.showToast({
           title: "标题已存在哦",//最多七个汉字长度
@@ -156,7 +162,7 @@ Page({
 
   //动态触发某组件的修改状态
   modifyStart:function(event){
-    console.log("modifyStart");
+    console.log("[detail.js] modifyStart");
     var state = event.currentTarget.dataset.state;
     this.settingData(state,true);
   },
