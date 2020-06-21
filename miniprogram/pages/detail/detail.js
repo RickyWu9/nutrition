@@ -1,5 +1,6 @@
 // pages/details/details.js
 var app = getApp();
+const db = 
 
 //功能大体都全，求好心人实现一下my和detail粗糙界面的优化o(╥﹏╥)o
 Page({
@@ -57,6 +58,17 @@ Page({
     var dataset = event.currentTarget.dataset;
     if(event.detail.value||dataset.empty){//empty为true代表可以为空值
       this.settingData(dataset.name,event.detail.value);
+
+      // db.collection('todos').where({
+      //   _openid: '{openid}',
+      //   title: this.data.diet.title
+      // })
+      // .get({
+      //   success: function(res) {
+      //     // res.data 是包含以上定义的两条记录的数组
+      //     console.log(res.data)
+      //   }
+      // })
     }
     this.settingData(dataset.state,false);
   },
@@ -104,6 +116,7 @@ Page({
       if(dietList[i].title==title){
         myDiet = dietList[i];
       }
+      break;
     }
     this.setData({diet:myDiet});
     console.log("打开饮食方案详情页面:",myDiet);

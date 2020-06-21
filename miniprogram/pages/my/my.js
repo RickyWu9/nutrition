@@ -1,6 +1,11 @@
 // miniprogram/pages/my/my.js
 var app = getApp();
 
+const db = wx.cloud.database();
+// const testDB = wx.cloud.database({
+//   env: 'test'
+// })
+
 //功能大体都全，求好心人实现一下my和detail粗糙界面的优化o(╥﹏╥)o
 Page({
 
@@ -109,6 +114,40 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+
+    db.collection('dietList').where({
+      _openid: '{openid}',
+    });
+    
+    
+    const MAX_LIMIT = 20;
+    const tasks = [];
+    // 先取出集合记录总数
+    const promise = new Promise(function(resolve,reject){
+      db.collection('dietList').count({
+        success: function(res) {
+          // 计算需分几次取
+          const batchTimes = Math.ceil(res.total / MAX_LIMIT);
+           // 承载所有读操作的 promise 的数组
+          for (let i = 0; i < batchTimes; i++) {
+            db.collection('dietList').skip(i * MAX_LIMIT).limit(MAX_LIMIT).get({
+              success:function(res){
+                tasks = tasks.concat(res.data);
+                console.log(res.data)
+              }
+            });
+            console.log(promise);
+          }
+        }
+      })
+      // resolve();
+    });
+    promise.then(function(){
+      console.log("tasks",tasks);
+    });
+    
+   
+
     //若不在onLoad中setData而只是在data里写dietList:app.globalData.dietList的话
     //则若在my加载前用cal添加diet，再打开my页面，my中的dietList不会自动更新
     //(data里的初始值会在onLoad前赋好，但是没有成功传递引用吗？)
@@ -116,9 +155,42 @@ Page({
     this.setData({
       dietList:app.globalData.dietList
     })
+    
+
+    db.collection('dietList').where({
+      //_openid: '{openid}',
+    })
+    .get({
+      success: function(res) {
+        console.log(res.data)
+        this.setData({
+          dietList:res.data
+        })
+        console.log("num",num)
+      }
+    })
+
     //监听全局属性updateDiet的访问来刷新my页面中的dietList列表，参见app中watchDietList方法
     let that = this;
     app.watchDietList(that.updateDiet);
+
+    // wx.cloud.init({
+    //   env: '环境 ID',
+    // })
+    // const db = wx.cloud.database()
+    // const _ = db.command
+    
+    // const watcher = db.collection('message').where({
+    //   room: '房间 id',
+    //   time: _.gt(new Date('2019-09-01 10:00')),
+    // }).watch({
+    //   onChange: snapshot => {
+    //     console.log(`新事件`, snapshot)
+    //   },
+    //   onError: err => {
+    //     console.error(`监听错误`, err)
+    //   }
+    // })
   },
 
   /**

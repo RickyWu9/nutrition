@@ -19,9 +19,6 @@ App({
       traceUser: true,
     })
 
-<<<<<<< Updated upstream
-    this.globalData = {}
-=======
     this.globalData = {
       //dietList中是供测试用的diet项,投入使用前需将dietList表清空
       dietList:[
@@ -75,6 +72,5 @@ App({
       }
     }
     return true;
->>>>>>> Stashed changes
   }
 })

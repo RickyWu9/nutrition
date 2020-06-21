@@ -432,7 +432,7 @@ Page({
 
 
 
-  //该掏钱了，哈哈
+  //以下为向my的dietList添加diet的函数接口，修改后即可使用
 
   submit: function (array) {
     if(this.data.cart.length<=0){
@@ -468,7 +468,49 @@ Page({
       }
     })
 
+    console.log(array);
 
+    //数据格式如下diet所示，均为字符串类型，其中title为主键，title重复时会插入失败
+    //detail详情页中context的显示方式为<text decode="{{true}}" space="nbsp">{{diet.context}}</text>
+    let newDiet = {
+      title:"123饮食方案名称_add1",//主键
+      calorie:this.data.sumMoney+"千卡",//需要自带单位
+      context:"内容_add1",//由选定食物组成，仅在detail页面显示
+      note:""//为食谱的备注，该功能不实现时note需要取""或undefined(此时detail页面备注为"无")，仅在detail页面显示
+    };
+
+    //添加diet功能实现如下所示,res返回添加是否成功的布尔值
+    let app = getApp(); 
+    const res = app.add_diet(newDiet);
+    console.log("更新是否成功:",res);
+
+    // const db = wx.cloud.database();
+    // db.collection('dietList').add({
+    //   // data 字段表示需新增的 JSON 数据
+    //   data: {
+    //     // _id: 'todo-identifiant-aleatoire', // 可选自定义 _id，在此处场景下用数据库自动分配的就可以了
+    //     title:"饮食方案名称_addI",//主键
+    //     calorie:"calorie_addI",//需要自带单位
+    //     context:"内容_addI",//由选定食物组成，仅在detail页面显示
+    //     note:""//为食谱的备注，该功能不实现时note需要取""或undefined(此时detail页面备注为"无")，仅在detail页面显示
+    //   },
+    //   success: function(res) {
+    //     // res 是一个对象，其中有 _id 字段标记刚创建的记录的 id
+    //     console.log(res)
+    //   },
+    //   fail: console.error,
+    //   // complete: console.log
+    // })
+
+    //添加失败的处理如下(如提醒添加失败)
+    if(!res){
+      //仅示例，可替换为更好的处理
+      wx.showToast({
+        title: "标题已存在哦",//最多七个汉字长度
+        icon: "none",
+        duration: 2000
+      });
+    }
 
   },
 
@@ -665,45 +707,11 @@ Page({
     });
 
   },
-<<<<<<< Updated upstream
 
 
 
   hideCartDetail: function () {
-
-    this.setData({
-
-      showCartDetail: false
-
-=======
-  
-  //以下为向my的dietList添加diet的函数接口，修改后即可使用
-  //以及为啥cal页面写了两个onLoad
-  bindCheckout:function(){
-    //数据格式如下diet所示，均为字符串类型，其中title为主键，title重复时会插入失败
-    //detail详情页中context的显示方式为<text decode="{{true}}" space="nbsp">{{diet.context}}</text>
-    let newDiet = {
-      title:"饮食方案名称_add1",//主键
-      calorie:"calorie_add1",//需要自带单位
-      context:"内容_add1",//由选定食物组成，仅在detail页面显示
-      note:""//为食谱的备注，该功能不实现时note需要取""或undefined(此时detail页面备注为"无")，仅在detail页面显示
-    };
-
-    //添加diet功能实现如下所示,res返回添加是否成功的布尔值
-    let app = getApp(); 
-    const res = app.add_diet(newDiet);
-    console.log("更新是否成功:",res);
-
-    //添加失败的处理如下(如提醒添加失败)
-    if(!res){
-      //仅示例，可替换为更好的处理
-      wx.showToast({
-        title: "标题已存在哦",//最多七个汉字长度
-        icon: "none",
-        duration: 2000
->>>>>>> Stashed changes
-    });
-
-  }
+    this.setData({showCartDetail: false});
+  },
 
 });

@@ -3,9 +3,13 @@
     "pages/index/index",
     "pages/my/my",
     "pages/cal/cal",
+    "pages/detail/detail",
     "pages/articles/article1/article1",
     "pages/articles/article2/article2",
     "pages/articles/article3/article3",
+    "pages/articles/article4/article4",
+    "pages/articles/article5/article5",
+    "pages/articles/article6/article6",
     "pages/articles/article7/article7"
   ],
   "window": {
