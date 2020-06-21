@@ -4,7 +4,7 @@
 }
 
 .result-bar{
-  padding: 8rpx 10rpx;
+  /* padding: 2rpx 0rpx; */
   background-color: rgb(255, 255, 255);
   border-top: 1rpx solid rgb(255, 255, 255);
   border-bottom: 1rpx solid rgb(255, 255, 255);
@@ -21,6 +21,7 @@
   border-bottom: 1rpx solid rgb(255, 255, 255);
 }
 .my-bar__form {
+  margin-top: 5rpx;
   position: relative;
   -webkit-box-flex: 1;
   -webkit-flex: auto;
@@ -38,6 +39,7 @@
   z-index: 1;
 }
 .my-bar__input {
+  padding-bottom: 5rpx;
   height: inherit;
   line-height: inherit;
   font-size: 85%;
@@ -46,15 +48,29 @@
   height: inherit;
   line-height: inherit;
   font-size: 100%;
-  color: rgb(41, 95, 233);
+  color: rgb(199, 148, 52);
   white-space: nowrap;
 }
 
+/* 目前没用到了 */
 .my-bar__btn {
   margin-left: 10rpx;
   font-size: 100%;
   color: #09BB07;
   white-space: nowrap;
+}
+
+.bmi{
+  margin-top: 4rpx;
+  padding-top: 4rpx;
+}
+
+.bmi_value{
+  padding-top: 6rpx;
+}
+
+.data{
+  color: rgb(111, 72, 4);
 }
 
 .explanation {
@@ -63,6 +79,11 @@
   line-height: 100%;
   display: block;
   margin-top: 10rpx;
+  padding: 0rpx 10rpx;
+}
+
+.review{
+  color: rgb(109, 104, 11);
 }
 
 .diet-bar {
@@ -83,6 +104,11 @@
 
 .diet{
   text-align: center;
+  color: rgb(172, 168, 143);
+  /* font-family: fantasy; */
+}
+.diet_title{
+  color: rgb(79, 68, 34);
 }
 .dietItem {
   width: 80%;
@@ -93,4 +119,13 @@
   font-size: 100%;
   white-space: nowrap;
   width:20%;
+}
+
+button:not([type]) {
+  color: rgb(123, 101, 22);
+  background-color: rgb(245, 242, 190);
+}
+
+button::after {
+  border: none;
 }

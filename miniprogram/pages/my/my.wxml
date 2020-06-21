@@ -13,35 +13,35 @@
         </view> 
         -->
         <view class="my-bar">
-            <view class="my-bar__hint">身高(m)：</view>
+            <view class="my-bar__hint"><text decode="{{true}}" space="nbsp">身高(m)：</text></view>
             <view class="my-bar__form">
                 <view class="my-bar__box">
-                    <input class="my-bar__input" type="digit" placeholder="在这里输入身高" bindblur="inputData" data-name="height" value="{{height}}"/>
+                    <input class="my-bar__input data" type="digit" placeholder="在这里输入身高" bindblur="inputData" data-name="height" value="{{height}}"/>
                 </view>
             </view>
         </view>
 
         <view class="my-bar">
-            <view class="my-bar__hint">体重(kg)：</view>
+            <view class="my-bar__hint"><text decode="{{true}}" space="nbsp">体重(kg)：</text></view>
             <view class="my-bar__form">
                 <view class="my-bar__box">
-                    <input class="my-bar__input" type="digit" placeholder="在这里输入体重" bindblur="inputData" data-name="weight" value="{{weight}}"/>
+                    <input class="my-bar__input data" type="digit" placeholder="在这里输入体重" bindblur="inputData" data-name="weight" value="{{weight}}"/>
                 </view>
             </view>
         </view>
         
         <view class="result-bar">
             <view class="my-bar">
-                <view class="my-bar__hint">BMI：</view>
+                <view class="my-bar__hint bmi"><text decode="{{true}}" space="nbsp">BMI：</text></view>
                 <view class="my-bar__form">
                     <view class="my-bar__box">
-                        <view class="my-bar__input">{{bmi}}</view>
+                        <view class="my-bar__input bmi_value data">{{bmi}}</view>
                     </view>
                 </view>
                 <!-- <button class="my-bar__btn" size="mini" bindtap="calBMI">计算</button> -->
             </view>
             <view class="explanation">
-                <view>你的身体评价是——{{assess}}</view>
+                <view class="review"><text decode="{{true}}" space="nbsp">你的身体评价是 —— {{assess}}</text></view>
                 <!-- 以下为参照表，不提供评估功能时，让用户自己参照 -->
                 <!-- <text decode="{{true}}" space="nbsp">正常范围：18.5 &lt;= BMI &lt; 24\n过重：24 &lt;= BMI &lt; 27\n轻度肥胖：27 &lt;= BMI &lt; 30\n中度肥胖：30 &lt;= BMI &lt; 35\n重度肥胖：BMI &gt; 35\n</text> -->
             </view>
@@ -52,11 +52,11 @@
           <view class="weui-cells weui-cells_after-title">
               <view class="weui-media-box weui-media-box_text diet-bar" wx:for="{{dietList}}" wx:key="title">
                   <view class="dietItem ellipsis"  bindtap="goToDetail" data-diet="{{item}}">
-                      <h4 class="weui-media-box__title">{{item.title}}</h4>
+                      <h4 class="weui-media-box__title diet_title">{{item.title}}</h4>
 					            <view class="weui-media-box__desc">卡路里: {{item.calorie}}</view>
                   </view>
                   <view class="deleteDiet">
-                      <button class="my-bar__btn" size="mini" bindtap="deleteDiet" type="warn" data-index="{{index}}">删除</button>
+                      <button class="my-bar__btn" size="mini" bindtap="deleteDiet" data-index="{{index}}">删除</button>
                   </view>
               </view>  
           </view>

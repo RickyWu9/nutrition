@@ -85,8 +85,8 @@ Page({
   modifyEnd:function(event){
     console.log("[detail.js] modifyEnd");
     var dataset = event.currentTarget.dataset;
-    if(event.detail.value||dataset.empty){//empty为true代表可以为空值
-      var oldValue = this.getProperty(dataset.name);
+    var oldValue = this.getProperty(dataset.name);
+    if((event.detail.value||dataset.empty)&&event.detail.value!=oldValue){//empty为true代表可以为空值
       this.settingData(dataset.name,event.detail.value);
       var that = this;
 

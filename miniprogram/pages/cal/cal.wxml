@@ -112,7 +112,8 @@
 <view class="cart">	
 
 			<view class="sumMoney" bindtap="showCartDetail">
-			<text space="nbsp">总计:{{sumMoney}}\n单位：千卡  </text></view>
+			    <text space="nbsp">总计:{{sumMoney}}\n单位：千卡  </text>
+			</view>
 			<button class="clearCart" bindtap="clear"> 清空</button>
 			<button class='submit' bindtap="onView">添加食谱</button>
 
