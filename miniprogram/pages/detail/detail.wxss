@@ -88,5 +88,5 @@
   margin-left: 6rpx;
   padding: 0rpx 8rpx;
   padding-bottom: 8rpx;
-  border: 3rpx solid rgb(255, 255, 255);
+  border: 3rpx solid black;
 }
